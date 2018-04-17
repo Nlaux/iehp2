@@ -1,0 +1,15 @@
+﻿@using Sitecore.Mvc
+@model iehp.MediCalPlan.Models.EventViewModel
+
+
+@foreach (var child in Model.MediCalPlan)
+{
+    <h4>@Html.Sitecore().Field("Title", child)</h4>
+    <hr class="blueDivider" />
+
+    <div class="col-20 offset-2 clearfix">
+        <p>@Html.Sitecore().Field("Description", child)</p>
+
+        @Html.Sitecore().Field("Call-To-Action", child, new { @class = "planButton" })
+    </div>
+}

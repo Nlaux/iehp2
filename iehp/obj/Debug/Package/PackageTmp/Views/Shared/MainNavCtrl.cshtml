@@ -1,0 +1,11 @@
+﻿@using Sitecore.Mvc
+@model iehp.MainNav.Models.NavigationViewModel
+
+<ul class="navMenu">
+    @foreach (var child in Model.Children)
+    {
+        <li>
+            @Html.Sitecore().Field("Link Url", child)
+        </li>
+    }
+</ul>
