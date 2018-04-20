@@ -8,6 +8,10 @@ namespace iehp.MainNav.Models
     {
         public Item Item { get; set; }
 
+        public Item Item2 { get; set; }
+
         public List<Item> Children { get; set; }
+
+        public List<Item> Children2 { get; set; }
     }
 }

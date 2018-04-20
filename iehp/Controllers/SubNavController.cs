@@ -9,23 +9,34 @@ namespace iehp.Controllers
 {
     public class SubNavController : SitecoreController
     {
-        public ViewResult SubNavCtrl()
+        [HttpGet]
+        public ActionResult SubNavCtrl(string guidValue, string pv)
         {
-
-            //read in config file & get parentGuid value
-            var parentGuidValue = Sitecore.Configuration.Settings.GetSetting("subNavMenuFolderGuid");
-            var parentGuidValue2 = Sitecore.Configuration.Settings.GetSetting("subNavDropdownMenuFolderGuid");
-
             //init Sitecore db 
             Database database = Context.Database;
 
+            //init Model & create lists from querystring
             var model = new NavigationViewModel();
-            model.Item = database.GetItem(parentGuidValue);
-            model.Item2 = database.GetItem(parentGuidValue2);
+            model.Item = database.GetItem(guidValue);
             model.Children = model.Item.Children.ToList();
-            model.Children2 = model.Item2.Children.ToList();
 
-            return View("/Views/Shared/SubNavCtrl.cshtml", model);
+            return PartialView(pv, model);
         }
+
+        //public ViewResult SubNavCtrl()
+        //{
+
+        //    //read in config file & get parentGuid value
+        //    var parentGuidValue = Sitecore.Configuration.Settings.GetSetting("subNavMenuFolderGuid");
+
+        //    //init Sitecore db 
+        //    Database database = Context.Database;
+
+        //    var model = new NavigationViewModel();
+        //    model.Item = database.GetItem(parentGuidValue);
+        //    model.Children = model.Item.Children.ToList();
+
+        //    return View("/Views/Shared/SubNavCtrl.cshtml", model);
+        //}
     }
 }

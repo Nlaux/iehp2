@@ -1,11 +1,26 @@
 ﻿@using Sitecore.Mvc
-@model iehp.MainNav.Models.NavigationViewModel
+@model iehp.Navigation.Models.NavigationViewModel
 
-<ul class="navMenu">
-    @foreach (var child in Model.Children)
-    {
-        <li>
-            @Html.Sitecore().Field("Link Url", child)
-        </li>
-    }
-</ul>
+<div class="col-21">
+    <ul class="navMenu">
+        @foreach (var child in Model.Guid1List)
+        {
+            <li>
+                @Html.Sitecore().Field("Link Url", child)
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="col-3">
+    <div class="subNavDropList navMenu float-right">
+        <a href="#" id="subNavDropLink" class="dropbtn">Portal Login &or;</a>
+        <div id="subNavDropDown" class="dropdown-content text-left">
+            @foreach (var child in Model.Guid2List)
+            {
+                @Html.Sitecore().Field("Link Url", child)
+            }
+        </div>
+    </div>
+
+</div>

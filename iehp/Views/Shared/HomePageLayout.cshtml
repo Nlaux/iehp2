@@ -18,8 +18,8 @@
 <body>
     <div class="container-fluid">
         <div class="col-14 mx-auto">
-            <div class="col-24 row text-right">
-                @Html.Sitecore().Placeholder("subNav")
+            <div id="subNavWrapper"class="col-24 row text-right">
+               
             </div>
 
             <div class="row">
@@ -27,8 +27,8 @@
                     <img class="smallLogo" src="https://ww3.iehp.org/Images/IEHP_LOGO_w194xh106.png" />
                 </div>
 
-                <div class="col-21 text-right">
-                    @Html.Sitecore().Placeholder("mainNav")
+                <div id="mainNavWrapper" class="col-21 row text-right">
+
                 </div>
             </div>
         </div>
@@ -54,146 +54,40 @@
 
             <div class="tab-content clearfix">
                 <div class="tab-pane active" id="doc">
-                    <div class="row">
-                        <div id="fadCTA" class="col-12">
-
-                        </div>
-
-                        <div id="fadForm" class="col-12">
-                            @Html.Sitecore().Placeholder("fadForm")
-                        </div>
-
-                        <div class="newsArticles col-8">
-                            @Html.Sitecore().Placeholder("latestNews")
-                        </div>
-
-                        <div id="eventCalendarBlockDoctor" class="col-16 extraBottom row">
-                            <div id="loading"></div>
-                        </div>
-
-                        <div id="eventCalendarBlockUrgent" class="col-16 extraBottom row">
-                            <div id="loading"></div>
-                        </div>
-
-                        <div id="eventCalendarBlockPharmacy" class="col-16 extraBottom row">
-                            <div id="loading"></div>
-                        </div>
-
-                        <div class="col-12 extraBottom">
-                            @Html.Sitecore().Placeholder("mediPlan")
-                        </div>
-
-                        <div class="col-12">
-                            @Html.Sitecore().Placeholder("dualChoicePlan")
-                        </div>
+                    <div id="docTab" class="tabWrapper row">
+                        <!--Tab Content Goes Here-->
                     </div>
                 </div>
 
                 <div class="tab-pane" id="urg">
-                    <div class="row">
-                        <div id="urgCTA" class="col-12">
-                            @Html.Sitecore().Placeholder("urgCTA")
-                        </div>
-
-                        <div id="urgSearch" class="col-12">
-                            @Html.Sitecore().Placeholder("urgForm")
-                        </div>
-
-                        <div class="newsArticles col-8">
-                            @Html.Sitecore().Placeholder("latestNews")
-                        </div>
-
-                        <div id="eventCalendarBlockDoctor" class="col-16 extraBottom row">
-                            <div id="loading"></div>
-                        </div>
-
-                        <div id="eventCalendarBlockUrgent" class="col-16 extraBottom row">
-                            <div id="loading"></div>
-                        </div>
-
-                        <div id="eventCalendarBlockPharmacy" class="col-16 extraBottom row">
-                            <div id="loading"></div>
-                        </div>
-
-                        <div class="col-12 extraBottom">
-                            @Html.Sitecore().Placeholder("mediPlan")
-                        </div>
-
-                        <div class="col-12">
-                            @Html.Sitecore().Placeholder("dualChoicePlan")
-                        </div>
+                    <div id="ucTab" class="tabWrapper row">
+                        <!--Tab Content Goes Here-->
                     </div>
                 </div>
 
                 <div class="tab-pane" id="pharm">
-                    <div class="row">
-                        <div id="pharmCTA" class="col-12">
-                            @Html.Sitecore().Placeholder("pharmCTA")
-                        </div>
-
-                        <div id="pharmSearch" class="col-12">
-                            @Html.Sitecore().Placeholder("pharmForm")
-                        </div>
-
-                        <div class="newsArticles col-8">
-                            @Html.Sitecore().Placeholder("latestNews")
-                        </div>
-
-                        <div id="eventCalendarBlockDoctor" class="col-16 extraBottom row">
-                            <div id="loading"></div>
-                            @Html.Sitecore().Placeholder("upcomingEvents")
-                        </div>
-
-                        <div id="eventCalendarBlockUrgent" class="col-16 extraBottom row">
-                            <div id="loading"></div>
-                            @Html.Sitecore().Placeholder("upcomingEvents")
-                        </div>
-
-                        <div id="eventCalendarBlockPharmacy" class="col-16 extraBottom row">
-                            <div id="loading"></div>
-                            @Html.Sitecore().Placeholder("upcomingEvents")
-                        </div>
-
-                        <div class="col-12 extraBottom">
-                            @Html.Sitecore().Placeholder("mediPlan")
-                        </div>
-
-                        <div class="col-12">
-                            @Html.Sitecore().Placeholder("dualChoicePlan")
-                        </div>
+                    <div id="pharmTab" class="tabWrapper row">
+                        <!--Tab Content Goes Here-->
                     </div>
                 </div>
             </div>
+
+            <div id="plansWrapper" class="row">
+                <div class="col-12 extraBottom">
+                    @Html.Sitecore().Placeholder("mediPlan")
+                </div>
+
+                <div class="col-12">
+                    @Html.Sitecore().Placeholder("dualChoicePlan")
+                </div>
+            </div>
+
         </div>
     </div>
 
     <div id="footer" class="container-fluid">
-        <div class="col-14 mx-auto row">
-            <div id="primaryFooterLinks" class="col-20 row">
-                <div class="col-4 topPadding">
-                    @Html.Sitecore().Placeholder("footerLinksCol1")
-                </div>
-
-                <div class="col-9 topPadding">
-                    @Html.Sitecore().Placeholder("footerLinksCol2")
-                </div>
-
-                <div class="col-5 topPadding">
-                    @Html.Sitecore().Placeholder("footerLinksCol3")
-                </div>
-
-                <div class="col-4 topPadding">
-                    @Html.Sitecore().Placeholder("footerLinksCol4")
-                </div>
-            </div>
-
-            <div id="secondaryFooterLinks" class="col-4 topPadding">
-                @Html.Sitecore().Placeholder("footerLinksCol5")
-            </div>
-
-            <div id="extraFooter" class="col-24">
-                @Html.Sitecore().Placeholder("extraFooter")
-            </div>
+        <div id="footerLinks" class="col-14 mx-auto row">
+            
         </div>
     </div>
 

@@ -118,57 +118,34 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\HomePageLayout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Components\fadCTA.cshtml" />
-    <Content Include="Views\Components\fadForm.cshtml" />
     <Content Include="Views\Shared\extraFooter.cshtml" />
     <Content Include="Views\Shared\SubNavCtrl.cshtml" />
     <Content Include="Views\Shared\MainNavCtrl.cshtml" />
     <Content Include="Views\Components\HeroSliderCtrl.cshtml" />
-    <Content Include="Views\Shared\FooterNavCol1Ctrl.cshtml" />
-    <Content Include="Views\Shared\FooterNavCol2Ctrl.cshtml" />
-    <Content Include="Views\Shared\FooterNavCol3Ctrl.cshtml" />
-    <Content Include="Views\Shared\FooterNavCol4Ctrl.cshtml" />
-    <Content Include="Views\Shared\FooterNavCol5Ctrl.cshtml" />
-    <Content Include="Views\Components\EventCalendarCtrl.cshtml" />
     <Content Include="Views\Shared\BlankPageLayout.cshtml" />
     <Content Include="Views\Components\BlankPage.cshtml" />
-    <Content Include="Views\Components\NewsCtrl.cshtml" />
     <Content Include="Views\Components\MediCalPlanCtrl.cshtml" />
     <Content Include="Views\Components\DualChoicePlanCtrl.cshtml" />
-    <Content Include="Views\Components\urgCTA.cshtml" />
-    <Content Include="Views\Components\pharmCTA.cshtml" />
-    <Content Include="Views\Components\urgForm.cshtml" />
-    <Content Include="Views\Components\pharmForm.cshtml" />
-    <Content Include="Views\Components\_FADEventCalendarCtrl.cshtml" />
-    <Content Include="Views\Components\_UCEventCalendarCtrl.cshtml" />
-    <Content Include="Views\Components\_PharmEventCalendarCtrl.cshtml" />
+    <Content Include="Views\Components\_TabWrapperCtrl.cshtml" />
+    <Content Include="Views\Shared\_FooterNavCtrl.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\queryCtrl.cs" />
     <Compile Include="Controllers\DualChoicePlanController.cs" />
-    <Compile Include="Controllers\EventCalendarController.cs" />
+    <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\TabWrapperController.cs" />
     <Compile Include="Controllers\fadCalendarController.cs" />
-    <Compile Include="Controllers\FooterNavCol1Controller.cs" />
-    <Compile Include="Controllers\FooterNavCol2Controller.cs" />
-    <Compile Include="Controllers\FooterNavCol3Controller.cs" />
-    <Compile Include="Controllers\FooterNavCol4Controller.cs" />
-    <Compile Include="Controllers\FooterNavCol5Controller.cs" />
     <Compile Include="Controllers\HeroSliderController.cs" />
     <Compile Include="Controllers\MainNavController.cs" />
     <Compile Include="Controllers\MediCalPlanController.cs" />
-    <Compile Include="Controllers\NewsArticlesController.cs" />
     <Compile Include="Controllers\SubNavController.cs" />
     <Compile Include="Models\DualChoicePlanCtrlModel.cs" />
-    <Compile Include="Models\EventCalendarCtrModel.cs" />
-    <Compile Include="Models\FooterNavCol1CtrlModel.cs" />
-    <Compile Include="Models\FooterNavCol2CtrlModel.cs" />
-    <Compile Include="Models\FooterNavCol3CtrlModel.cs" />
-    <Compile Include="Models\FooterNavCol4CtrlModel.cs" />
-    <Compile Include="Models\FooterNavCol5CtrlModel.cs" />
+    <Compile Include="Models\NavigationCtrlModel.cs" />
+    <Compile Include="Models\TabWrapperCtrModel.cs" />
     <Compile Include="Models\HeroSliderCtrlModel.cs" />
     <Compile Include="Models\MainNavCtrlModel.cs" />
     <Compile Include="Models\MediCalPlanCtrlModel.cs" />
-    <Compile Include="Models\NewsArticlesCtrlModel.cs" />
     <Compile Include="Models\SubNavCtrlModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -184,19 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />
-    <Folder Include="Views\DualChoicePlan\" />
-    <Folder Include="Views\EventCalendar\" />
-    <Folder Include="Views\fadCalendar\" />
-    <Folder Include="Views\footerNavCol1\" />
-    <Folder Include="Views\FooterNavCol2\" />
-    <Folder Include="Views\FooterNavCol3\" />
-    <Folder Include="Views\FooterNavCol4\" />
-    <Folder Include="Views\FooterNavCol5\" />
-    <Folder Include="Views\HeroSlider\" />
-    <Folder Include="Views\MainNav\" />
-    <Folder Include="Views\NewsArticle\" />
-    <Folder Include="Views\Slider\" />
-    <Folder Include="Views\SubNav\" />
+    <Folder Include="Views\FooterNav\" />
+    <Folder Include="Views\Navigation\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

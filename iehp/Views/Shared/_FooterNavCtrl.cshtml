@@ -1,0 +1,49 @@
+﻿@using Sitecore.Mvc
+@model iehp.Navigation.Models.NavigationViewModel
+
+<div class="col-20 row">
+    <div class="col-4 topPadding">
+        <ul class="footerNavMenu">
+            @foreach (var child in Model.Guid1List)
+            {
+                <li>@Html.Sitecore().Field("Link Url", child)</li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-9 topPadding">
+        <ul class="footerNavMenu">
+            @foreach (var child in Model.Guid2List)
+            {
+                <li>@Html.Sitecore().Field("Link Url", child)</li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-5 topPadding">
+       <ul class="footerNavMenu">
+            @foreach (var child in Model.Guid3List)
+            {
+                <li>@Html.Sitecore().Field("Link Url", child)</li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-4 topPadding">
+       <ul class="footerNavMenu">
+            @foreach (var child in Model.Guid4List)
+            {
+                <li>@Html.Sitecore().Field("Link Url", child)</li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div id="secondaryFooterLinks" class="col-4 topPadding">
+    <ul class="footerNavMenu">
+        @foreach (var child in Model.Guid5List)
+        {
+            <li>@Html.Sitecore().Field("Link Url", child)</li>
+        }
+    </ul>
+</div>

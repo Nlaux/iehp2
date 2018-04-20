@@ -2,12 +2,58 @@
     $(document).ready(function () {
         $(".eventBlock2").hide();
 
-        $("#eventCalendarBlockUrgent, #eventCalendarBlockPharmacy, #urgCTA, #urgSearch, #pharmCTA, #pharmSearch").hide();
-        $("#eventCalendarBlockDoctor").css('display', 'flex');
+        //Menus
+        $.when(
+            //subNav Menu
+            $.get('/api/sitecore/Navigation/NavigationCtrl?Guid1=C9D8CBFA-D320-4417-A944-F74064DA1FF3&Guid2=D320&Guid3=D320&Guid4=D320&Guid5=1&Guid6=2&Pv=/Views/Shared/SubNavCtrl.cshtml', function (data1) {
+                $("#subNavWrapper").html(data1);
+            })
+            //mainNav Menu
+            //$.get('/api/sitecore/Navigation/NavigationCtrl?Guid1=337C22C2-3DCA-4C74-B406-0880EBA15637&Guid2=99DBDCC1-97EF-4E56-A1C3-CE6A3C92174D&Pv=/Views/Shared/MainNavCtrl.cshtml', function (data2) {
+            //    $("#mainNavWrapper").html(data2);
+            //}),
+            ////footerNav Menu
+            //$.get('/api/sitecore/Navigation/NavigationCtrl?Guid1=6C4754EE-B9F9-47E0-B51B-B9765707AA74&Guid2=163904B8-FA80-4659-9E22-CE7A791B927C&Guid3=9E570B09-3FBF-4495-8805-75B75EA5D94B&Guid4=8C077CF0-7F39-4DF5-8BFC-7E0EE2FCF9ED&Guid5=87DEA43C-0008-4ACC-9364-C0AD2F80A4B6&Guid6=1384B6B0-77A6-44F7-B95F-E5DDAB0B3ED3&Pv=/Views/Shared/_FooterNavCtrl.cshtml', function (data3) {
+            //    $("#subNavWrapper").html(data3);
+            //})
 
+        ).then(function () {
+            console.log("loading successful");
+        });
+        
+
+        //subNav Menu
+        //$.ajax({
+        //    type: "GET",
+        //    url: '/api/sitecore/SubNav/SubNavCtrl?guidValue=C9D8CBFA-D320-4417-A944-F74064DA1FF3&pv=/Views/Shared/SubNavCtrl.cshtml',
+        //    contentType: "application/json; charset=utf-8",
+        //    cache: false,
+        //    success: function (data) {
+        //        $("#subNavWrapper").html(data);
+        //    },
+        //    error: function (request, status, error) {
+        //        console.log(request.responseText);
+        //    }
+        //});
+
+        //mainNav Menu
+        //$.ajax({
+        //    type: "GET",
+        //    url: '/api/sitecore/MainNav/MainNavCtrl?Guid1=337C22C2-3DCA-4C74-B406-0880EBA15637&Guid2=99DBDCC1-97EF-4E56-A1C3-CE6A3C92174D&Pv=/Views/Shared/MainNavCtrl.cshtml',
+        //    contentType: "application/json; charset=utf-8",
+        //    cache: false,
+        //    success: function (data) {
+        //        $("#mainNavWrapper").html(data);
+        //    },
+        //    error: function (request, status, error) {
+        //        console.log(request.responseText);
+        //    }
+        //});
+
+        //Doctor Tab
         $.ajax({
             type: "GET",
-            url: '/api/sitecore/EventCalendar/EventCalendarCtrl',
+            url: '/api/sitecore/TabWrapper/TabWrapperCtrl?guidValue1=CDF3A3AC-7F8A-4742-8CBB-AA8839DDE0B6&guidValue2=1E899605-1289-4A48-9C30-DC0C93E16D3A&guidValue3=AF97CA61-EE55-47C4-A086-8DC6126F25C0&guidQty1=3&guidQty2=3&guidQty3=3&pv=/Views/Components/_TabWrapperCtrl.cshtml',
             contentType: "application/json; charset=utf-8",
             cache: false,
             beforeSend: function () {
@@ -17,39 +63,34 @@
                 $('#loading').hide();
             },
             success: function (data) {
-                $("#eventCalendarBlockDoctor").html(data);
+                $(".tabWrapper").html(data);
             },
             error: function (request, status, error) {
                 console.log(request.responseText);
             }
         });
 
-        $.ajax({
-            type: "GET",
-            url: '/api/sitecore/FadCalendar/FadCalendarCtrl',
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function () {
-                $('#loading').show();
-            },
-            complete: function () {
-                $('#loading').hide();
-            },
-            success: function (data) {
-                $("#fadCTA").html(data);
-            },
-            error: function (request, status, error) {
-                console.log(request.responseText);
-            }
-        });
+        //Footer Menu
+        //$.ajax({
+        //    type: "GET",
+        //    url: '/api/sitecore/FooterNav/FooterNavCtrl?Guid1=6C4754EE-B9F9-47E0-B51B-B9765707AA74&Guid2=163904B8-FA80-4659-9E22-CE7A791B927C&Guid3=9E570B09-3FBF-4495-8805-75B75EA5D94B&Guid4=8C077CF0-7F39-4DF5-8BFC-7E0EE2FCF9ED&Guid5=87DEA43C-0008-4ACC-9364-C0AD2F80A4B6&Guid6=1384B6B0-77A6-44F7-B95F-E5DDAB0B3ED3&Pv=/Views/Shared/_FooterNavCtrl.cshtml',
+        //    contentType: "application/json; charset=utf-8",
+        //    cache: false,
+        //    success: function (data) {
+        //        $("#footerLinks").html(data);
+        //    },
+        //    error: function (request, status, error) {
+        //        console.log(request.responseText);
+        //    }
+        //});
+
 
         $("#doctorTab").on("click", function () {
-            $("#eventCalendarBlockUrgent, #eventCalendarBlockPharmacy").hide();
-            $("#eventCalendarBlockDoctor").css('display', 'flex');
+            $(".eventBlock2").hide();
 
             $.ajax({
                 type: "GET",
-                url: '/api/sitecore/EventCalendar/EventCalendarCtrl',
+                url: '/api/sitecore/TabWrapper/TabWrapperCtrl?guidValue1=CDF3A3AC-7F8A-4742-8CBB-AA8839DDE0B6&guidValue2=1E899605-1289-4A48-9C30-DC0C93E16D3A&guidValue3=AF97CA61-EE55-47C4-A086-8DC6126F25C0&guidQty1=3&guidQty2=3&guidQty3=3&pv=/Views/Components/_TabWrapperCtrl.cshtml',
                 contentType: "application/json; charset=utf-8",
                 cache: false,
                 beforeSend: function () {
@@ -59,7 +100,7 @@
                     $('#loading').hide();
                 },
                 success: function (data) {
-                    $("#eventCalendarBlockDoctor").html(data);
+                    $(".tabWrapper").html(data);
                 },
                 error: function (request, status, error) {
                     console.log(request.responseText);
@@ -68,12 +109,11 @@
         });
 
         $("#urgentTab").on("click", function () {
-            $("#eventCalendarBlockDoctor, #eventCalendarBlockPharmacy").hide();
-            $("#eventCalendarBlockUrgent").css('display', 'flex');
+            $(".eventBlock2").hide();
 
             $.ajax({
                 type: "GET",
-                url: '/api/sitecore/EventCalendar/UrgentTabCtrl',
+                url: '/api/sitecore/TabWrapper/TabWrapperCtrl?guidValue1=068BD40E-ECA6-4F46-9EED-351A0AB2B991&guidValue2=407CEDA7-2315-4F5F-BE6F-B8DB4A1505B0&guidValue3=C1CAFEA0-2F3A-47FA-8102-E5A167EF8886&guidQty1=3&guidQty2=3&guidQty3=3&pv=/Views/Components/_TabWrapperCtrl.cshtml',
                 contentType: "application/json; charset=utf-8",
                 cache: false,
                 beforeSend: function () {
@@ -83,7 +123,7 @@
                     $('#loading').hide();
                 },
                 success: function (data) {
-                    $("#eventCalendarBlockUrgent").html(data);
+                    $(".tabWrapper").html(data);
                 },
                 error: function (request, status, error) {
                     console.log(request.responseText);
@@ -92,12 +132,11 @@
         });
 
         $("#pharmacyTab").on("click", function () {
-            $("#eventCalendarBlockDoctor, #eventCalendarBlockUrgent").hide();
-            $("#eventCalendarBlockPharmacy").css('display', 'flex');
+            $(".eventBlock2").hide();
 
             $.ajax({
                 type: "GET",
-                url: '/api/sitecore/EventCalendar/PharmacyTabCtrl',
+                url: '/api/sitecore/TabWrapper/TabWrapperCtrl?guidValue1=FB878BA8-7D65-4DF4-BE8E-42A3D0D05AA1&guidValue2=7884BEFE-F22C-45DE-882C-9A0E79145CF3&guidValue3=5BF74B8F-CE72-4FD6-8749-413AC6A00A92&guidQty1=3&guidQty2=3&guidQty3=3&pv=/Views/Components/_TabWrapperCtrl.cshtml',
                 contentType: "application/json; charset=utf-8",
                 cache: false,
                 beforeSend: function () {
@@ -107,7 +146,7 @@
                     $('#loading').hide();
                 },
                 success: function (data) {
-                    $("#eventCalendarBlockPharmacy").html(data);
+                    $(".tabWrapper").html(data);
                 },
                 error: function (request, status, error) {
                     console.log(request.responseText);
@@ -127,15 +166,15 @@
             $(".eventBlock1").hide();
         });
 
+        $(document).on("mouseenter", "#subNavDropLink, #subNavDropDown", function () {
+            $("#subNavDropDown").show();
+        });
 
-        $("#subNavDropLink, #subNavDropDown").hover(
-            function () {
-                $("#subNavDropDown").show();
-            },
-            function () {
-                $("#subNavDropDown").hide();
-            }
-        );
+        $(document).on("mouseleave", "#subNavDropLink, #subNavDropDown", function () {
+            $("#subNavDropDown").hide();
+        });
+
+      
 
     });
 })(jQuery);

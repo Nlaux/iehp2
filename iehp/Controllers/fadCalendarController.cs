@@ -1,6 +1,4 @@
-﻿using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.Mvc.Controllers;
+﻿using Sitecore.Mvc.Controllers;
 using System.Web.Mvc;
 
 namespace iehp.Controllers
@@ -10,13 +8,22 @@ namespace iehp.Controllers
         [HttpGet]
         public JsonResult FadCalendarCtrl()
         {
-            //Database database = Sitecore.Context.Database;
-            //Item data = database.GetItem("110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9");
-            //var fieldValue = data.Fields["Find a Doctor CTA"];
+            string data = "";
 
-            string data = "Hello.";
+            if (Sitecore.Context.Database.GetItem("110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9").Fields["Find a Doctor CTA"] != null)
+            {
+                data = Sitecore.Context.Database.GetItem("110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9").Fields["Find a Doctor CTA"].ToString();
+            }
 
             return Json(data, JsonRequestBehavior.AllowGet);
-        }      
+        }
+        
+        [HttpGet]
+
+        public ActionResult FadFormView()
+        {
+
+            return PartialView("/Views/Components/fadForm.cshtml");
+        }
     }
 }
