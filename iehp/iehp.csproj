@@ -119,8 +119,7 @@
     <Content Include="Views\Shared\HomePageLayout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\extraFooter.cshtml" />
-    <Content Include="Views\Shared\SubNavCtrl.cshtml" />
-    <Content Include="Views\Shared\MainNavCtrl.cshtml" />
+    <Content Include="Views\Shared\TopNavCtrl.cshtml" />
     <Content Include="Views\Components\HeroSliderCtrl.cshtml" />
     <Content Include="Views\Shared\BlankPageLayout.cshtml" />
     <Content Include="Views\Components\BlankPage.cshtml" />
@@ -132,21 +131,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\queryCtrl.cs" />
+    <Compile Include="Components\tabWrapperCtrl.cs" />
     <Compile Include="Controllers\DualChoicePlanController.cs" />
+    <Compile Include="Controllers\FooterNavController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\TabWrapperController.cs" />
     <Compile Include="Controllers\fadCalendarController.cs" />
     <Compile Include="Controllers\HeroSliderController.cs" />
-    <Compile Include="Controllers\MainNavController.cs" />
+    <Compile Include="Controllers\TopNavController.cs" />
     <Compile Include="Controllers\MediCalPlanController.cs" />
-    <Compile Include="Controllers\SubNavController.cs" />
     <Compile Include="Models\DualChoicePlanCtrlModel.cs" />
+    <Compile Include="Models\FooterNavCtrlModel.cs" />
     <Compile Include="Models\NavigationCtrlModel.cs" />
     <Compile Include="Models\TabWrapperCtrModel.cs" />
     <Compile Include="Models\HeroSliderCtrlModel.cs" />
-    <Compile Include="Models\MainNavCtrlModel.cs" />
+    <Compile Include="Models\TopNavCtrlModel.cs" />
     <Compile Include="Models\MediCalPlanCtrlModel.cs" />
-    <Compile Include="Models\SubNavCtrlModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
