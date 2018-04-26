@@ -1,7 +1,10 @@
-﻿@using Sitecore.Mvc
+﻿@using Sitecore.Data.Fields
+@using Sitecore.Data.Items
+@using Sitecore.Mvc
+@using Sitecore.Resources.Media
 @model iehp.TopNav.Models.NavigationViewModel
 
-<div class="col-24 text-right">
+<div id="subNavMenuWrapper" class="col-24 text-right">
     <ul class="navMenu small">
         @foreach (var child in Model.Guid1List)
         {
@@ -17,8 +20,8 @@
         <img class="smallLogo" src="https://ww3.iehp.org/Images/IEHP_LOGO_w194xh106.png" />
     </div>
 
-    <div class="col-21 row text-right">
-        <div class="col-21">
+    <div class="col-21 row justify-content-end">
+        <div id="megaNavToggle" class="col-13 row">
             <ul class="navMenu">
                 @foreach (var child in Model.Guid2List)
                 {
@@ -26,28 +29,221 @@
                         @Html.Sitecore().Field("Link Url", child)
                     </li>
                 }
-
-                <div id="searchLinkWrapper" class="searchlink">
-                    <i class="fa fa-search fa-custom"></i>
-                    <div id="searchBox" class="searchform">
-                        <form id="search" action="">
-                            <input type="text" class="s" id="s" name="s" placeholder="Enter search term">
-                            <button type="submit" class="sbtn"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-                </div>
             </ul>
+        </div>
+        <div class="col-1">
+            <div id="searchLinkWrapper" class="searchlink">
+                <i class="fa fa-search fa-custom"></i>
+                <div id="searchBox" class="searchform">
+                    <form id="search" action="">
+                        <input type="text" class="s" id="s" name="s" placeholder="Enter search term">
+                        <button type="submit" class="sbtn"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
         </div>
 
         <div class="col-3">
-            <div class="subNavDropList navMenu float-right">
-                <a href="#" id="subNavDropLink" class="dropbtn">Portal Login &or;</a>
-                <div id="subNavDropDown" class="dropdown-content text-left">
+            <div class="mainNavDropList navMenu float-right">
+                <a href="#" id="mainNavDropLink" class="dropbtn">Portal Login &or;</a>
+                <div id="mainNavDropDown" class="dropdown-content text-left">
                     @foreach (var child in Model.Guid3List)
                     {
                         @Html.Sitecore().Field("Link Url", child)
                     }
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="fadMegaNavMenu" class="megaNavMenuPadding">
+    <div class="col-24 row">
+        <div class="col-9 row">
+            <div class="col-12 offset-lg-1">
+                <ul class="megaNavMenu">
+                    @foreach (var child in Model.Guid4List)
+                    {
+                        <li>
+                            @Html.Sitecore().Field("Link Url", child)
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <div class="col-9 vertDivider">
+                <ul class="megaNavMenu">
+                    @foreach (var child in Model.Guid5List)
+                    {
+                        <li>
+                            @Html.Sitecore().Field("Link Url", child)
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-15 row">
+            <div id="fadMegaNavImg" class="col-9">
+                @foreach (var child in Model.Guid6List)
+                {
+                    Item item = Sitecore.Context.Item;
+                    ImageField imgField = ((ImageField)child.Fields["Image"]);
+
+                    <img src="@MediaManager.GetMediaUrl(imgField.MediaItem)" />
+
+                }
+            </div>
+
+            <div class="col-13 offset-lg-1">
+                @foreach (var child in Model.Guid6List)
+                {
+                    @Html.Sitecore().Field("Description", child)
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="fmMegaNavMenu" class="megaNavMenuPadding">
+    <div class="col-24 row">
+        <div class="col-9 row">
+            <div class="col-12 offset-lg-1">
+                <ul class="megaNavMenu">
+                    @foreach (var child in Model.Guid7List)
+                    {
+                        <li>
+                            @Html.Sitecore().Field("Link Url", child)
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <div class="col-9 vertDivider">
+                <ul class="megaNavMenu">
+                    @foreach (var child in Model.Guid8List)
+                    {
+                        <li>
+                            @Html.Sitecore().Field("Link Url", child)
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-15 row">
+            <div id="fmMegaNavImg" class="col-9">
+                @foreach (var child in Model.Guid9List)
+                {
+                    Item item = Sitecore.Context.Item;
+                    ImageField imgField = ((ImageField)child.Fields["Image"]);
+
+                    <img src="@MediaManager.GetMediaUrl(imgField.MediaItem)" />
+
+                }
+            </div>
+
+            <div class="col-13 offset-lg-1">
+                @foreach (var child in Model.Guid9List)
+                {
+                    @Html.Sitecore().Field("Description", child)
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="fpMegaNavMenu" class="megaNavMenuPadding">
+    <div class="col-24 row">
+        <div class="col-9 row">
+            <div class="col-12 offset-lg-1">
+                <ul class="megaNavMenu">
+                    @foreach (var child in Model.Guid10List)
+                    {
+                        <li>
+                            @Html.Sitecore().Field("Link Url", child)
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <div class="col-9 vertDivider">
+                <ul class="megaNavMenu">
+                    @foreach (var child in Model.Guid11List)
+                    {
+                        <li>
+                            @Html.Sitecore().Field("Link Url", child)
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-15 row">
+            <div id="fmMegaNavImg" class="col-9">
+                @foreach (var child in Model.Guid12List)
+                {
+                    Item item = Sitecore.Context.Item;
+                    ImageField imgField = ((ImageField)child.Fields["Image"]);
+
+                    <img src="@MediaManager.GetMediaUrl(imgField.MediaItem)" />
+
+                }
+            </div>
+
+            <div class="col-13 offset-lg-1">
+                @foreach (var child in Model.Guid12List)
+                {
+                    @Html.Sitecore().Field("Description", child)
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="fcMegaNavMenu" class="megaNavMenuPadding">
+    <div class="col-24 row">
+        <div class="col-9 row">
+            <div class="col-12 offset-lg-1">
+                <ul class="megaNavMenu">
+                    @foreach (var child in Model.Guid13List)
+                    {
+                        <li>
+                            @Html.Sitecore().Field("Link Url", child)
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <div class="col-9 vertDivider">
+                <ul class="megaNavMenu">
+                    @foreach (var child in Model.Guid14List)
+                    {
+                        <li>
+                            @Html.Sitecore().Field("Link Url", child)
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-15 row">
+            <div id="fmMegaNavImg" class="col-9">
+                @foreach (var child in Model.Guid15List)
+                {
+                    Item item = Sitecore.Context.Item;
+                    ImageField imgField = ((ImageField)child.Fields["Image"]);
+
+                    <img src="@MediaManager.GetMediaUrl(imgField.MediaItem)" />
+
+                }
+            </div>
+
+            <div class="col-13 offset-lg-1">
+                @foreach (var child in Model.Guid15List)
+                {
+                    @Html.Sitecore().Field("Description", child)
+                }
             </div>
         </div>
     </div>

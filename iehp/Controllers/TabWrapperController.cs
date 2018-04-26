@@ -15,8 +15,23 @@ namespace iehp.Controllers
             //init Sitecore db 
             Database database = Context.Database;
 
-            //Tab specific Info
-            if (myRequest.Guid1 == "CDF3A3AC-7F8A-4742-8CBB-AA8839DDE0B6") //Doctor Tab
+            //init Model & create lists from querystring
+            var model = new EventViewModel();
+
+            //grab Tab Guid ID's from Config
+            var Guid1val = Sitecore.Configuration.Settings.GetSetting("doctorTab1FolderGuid");
+            var Guid2val = Sitecore.Configuration.Settings.GetSetting("doctorTab2FolderGuid");
+            var Guid3val = Sitecore.Configuration.Settings.GetSetting("urgentTab1FolderGuid");
+            var Guid4val = Sitecore.Configuration.Settings.GetSetting("urgentTab2FolderGuid");
+            var Guid5val = Sitecore.Configuration.Settings.GetSetting("pharmacyTab1FolderGuid");
+            var Guid6val = Sitecore.Configuration.Settings.GetSetting("pharmacyTab2FolderGuid");
+
+            var Guid7val = Sitecore.Configuration.Settings.GetSetting("newsArticlesTab1FolderGuid"); //news articles for tab 1
+            var Guid8val = Sitecore.Configuration.Settings.GetSetting("newsArticlesTab2FolderGuid"); //news articles for tab 2
+            var Guid9val = Sitecore.Configuration.Settings.GetSetting("newsArticlesTab3FolderGuid"); //news articles for tab 3
+
+            //Tab specific Info, compare incoming Guid to config Guid and process
+            if (myRequest.Tab1 == "DoctorTab") //Doctor Tab
             {
                 if (Sitecore.Context.Database.GetItem("110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9").Fields["Find a Doctor CTA"] != null)
                 {
@@ -27,8 +42,21 @@ namespace iehp.Controllers
                 ViewBag.ecLink1 = "<a class='eventLink1 nav-link active' href='#' data-toggle='tab'>Community</a>";
                 ViewBag.ecLink2 = "<a class='eventLink2 nav-link' href='#' data-toggle='tab'>Health</a>";
 
-            } else if (myRequest.Guid1 == "068BD40E-ECA6-4F46-9EED-351A0AB2B991") //Urgent Care Tab
-                
+                model.Item = database.GetItem(Guid1val); //event tab 1
+                model.Item2 = database.GetItem(Guid2val); //event tab 2
+                model.Item3 = database.GetItem(Guid7val); //news articles for tab 1
+
+                model.Guid1 = model.Item.Children.ToList();
+                model.Guid2 = model.Item2.Children.ToList();
+                model.Guid3 = model.Item3.Children.ToList();
+
+                ViewBag.guidList1 = model.Guid1.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.Qty1); //tab 1
+                ViewBag.guidList2 = model.Guid2.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.Qty2); //tab 2
+                ViewBag.guidList3 = model.Guid3.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.Qty3); //newslist
+
+            }
+
+            if (myRequest.Tab1 == "UrgentTab") //Urgent Care Tab      
             {
                 if (Sitecore.Context.Database.GetItem("110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9").Fields["Urgent Care CTA"] != null)
                 {
@@ -39,7 +67,21 @@ namespace iehp.Controllers
                 ViewBag.ecLink1 = "<a class='eventLink1 nav-link active' href='#' data-toggle='tab'>Doctors</a>";
                 ViewBag.ecLink2 = "<a class='eventLink2 nav-link' href='#' data-toggle='tab'>Hospitals</a>";
 
-            } else if (myRequest.Guid1 == "FB878BA8-7D65-4DF4-BE8E-42A3D0D05AA1") //Pharmacy Tab
+                model.Item = database.GetItem(Guid3val); //event tab 1
+                model.Item2 = database.GetItem(Guid4val); //event tab 2
+                model.Item3 = database.GetItem(Guid8val); //news articles for tab 2
+
+                model.Guid1 = model.Item.Children.ToList();
+                model.Guid2 = model.Item2.Children.ToList();
+                model.Guid3 = model.Item3.Children.ToList();
+
+                ViewBag.guidList1 = model.Guid1.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.Qty1); //tab 1
+                ViewBag.guidList2 = model.Guid2.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.Qty2); //tab 2
+                ViewBag.guidList3 = model.Guid3.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.Qty3); //newslist
+
+            }
+
+            if (myRequest.Tab1 == "PharmacyTab") //Pharmacy Tab
             {
                 if (Sitecore.Context.Database.GetItem("110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9").Fields["Pharmacy CTA"] != null)
                 {
@@ -49,24 +91,20 @@ namespace iehp.Controllers
                 ViewBag.ecTitle = "<h4>Upcoming Events - Pharmacy Tab</h4>";
                 ViewBag.ecLink1 = "<a class='eventLink1 nav-link active' href='#' data-toggle='tab'>Drugs</a>";
                 ViewBag.ecLink2 = "<a class='eventLink2 nav-link' href='#' data-toggle='tab'>Cartels</a>";
+
+                model.Item = database.GetItem(Guid5val); //event tab 1
+                model.Item2 = database.GetItem(Guid6val); //event tab 2
+                model.Item3 = database.GetItem(Guid9val); //news articles for tab 2
+
+                model.Guid1 = model.Item.Children.ToList();
+                model.Guid2 = model.Item2.Children.ToList();
+                model.Guid3 = model.Item3.Children.ToList();
+
+                ViewBag.guidList1 = model.Guid1.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.Qty1); //tab 1
+                ViewBag.guidList2 = model.Guid2.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.Qty2); //tab 2
+                ViewBag.guidList3 = model.Guid3.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.Qty3); //newslist
             }
             
-
-            //init Model & create lists from querystring
-            var model = new EventViewModel();
-            model.Item = database.GetItem(myRequest.Guid1);
-            model.Guid1 = model.Item.Children.ToList();
-
-            model.Item2 = database.GetItem(myRequest.Guid2);
-            model.Guid2 = model.Item2.Children.ToList();
-
-            model.Item3 = database.GetItem(myRequest.Guid3);
-            model.Guid3 = model.Item3.Children.ToList();
-
-            //trunicate list to resultsQty from querystring
-            ViewBag.guidList1 = model.Guid1.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.GuidQty1);
-            ViewBag.guidList2 = model.Guid2.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.GuidQty2);
-            ViewBag.guidList3 = model.Guid3.Where(x => x.Fields["Active"] != null && x.Fields["Active"].Value == "1").Take(myRequest.GuidQty3);
 
             //pagination stuff
             //const int PageSize = 3;

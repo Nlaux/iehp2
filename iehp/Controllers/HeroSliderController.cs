@@ -1,7 +1,6 @@
 ﻿using iehp.HeroSlider.Models;
 using Sitecore;
 using Sitecore.Data;
-using Sitecore.Data.Items;
 using Sitecore.Mvc.Controllers;
 using System.Linq;
 using System.Web.Mvc;

@@ -2,13 +2,12 @@
 {
     public class TabWrapperCtrlRequest
     {
-        public string Guid1 { get; set; }
-        public string Guid2 { get; set; }
-        public string Guid3 { get; set; }
-        public int GuidQty1 { get; set; }
-        public int GuidQty2 { get; set; }
-        public int GuidQty3 { get; set; }
+        public string Tab1 { get; set; }
+        public string Tab2 { get; set; }
+        public string Tab3 { get; set; }
+        public int Qty1 { get; set; }
+        public int Qty2 { get; set; }
+        public int Qty3 { get; set; }
         public string Pv { get; set; }
-
     }
 }
