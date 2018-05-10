@@ -118,7 +118,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\HomePageLayout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Shared\extraFooter.cshtml" />
     <Content Include="Views\Shared\TopNavCtrl.cshtml" />
     <Content Include="Views\Components\HeroSliderCtrl.cshtml" />
     <Content Include="Views\Shared\BlankPageLayout.cshtml" />
@@ -127,13 +126,38 @@
     <Content Include="Views\Components\DualChoicePlanCtrl.cshtml" />
     <Content Include="Views\Components\_TabWrapperCtrl.cshtml" />
     <Content Include="Views\Shared\_FooterNavCtrl.cshtml" />
+    <Content Include="Views\Shared\MemberPageLayout.cshtml" />
+    <Content Include="Views\Components\MemberHeroCtrl.cshtml" />
+    <Content Include="Views\Components\_MemberLogin.cshtml" />
+    <Content Include="Views\Components\_MemberInfo.cshtml" />
+    <Content Include="Views\Components\_PlanOne.cshtml" />
+    <Content Include="Views\Components\_PlanTwo.cshtml" />
+    <Content Include="Views\Components\_PlansWidget.cshtml" />
+    <Content Include="Views\Components\_PlansCTA.cshtml" />
+    <Content Include="Views\Components\_hwWidget.cshtml" />
+    <Content Include="Views\Components\_HwTabsWrapperCtrl.cshtml" />
+    <Content Include="Views\Components\_HwVideoWidget.cshtml" />
+    <Content Include="Views\Components\_HwEventWidgetCtrl.cshtml" />
+    <Content Include="Views\Components\_HwCTA.cshtml" />
+    <Content Include="Views\Components\_CahCTA.cshtml" />
+    <Content Include="Views\Components\_HwVideoWidgetCtrl.cshtml" />
+    <Content Include="Views\Components\_MrLinksCtrl.cshtml" />
+    <Content Include="Views\Shared\SearchResultsLayout.cshtml" />
+    <Content Include="Views\Shared\_ExtraFooterNavCtrl.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\hwTabsWrapperCtrl.cs" />
     <Compile Include="Components\queryCtrl.cs" />
     <Compile Include="Components\tabWrapperCtrl.cs" />
     <Compile Include="Controllers\DualChoicePlanController.cs" />
+    <Compile Include="Controllers\ExtraFooterNavController.cs" />
     <Compile Include="Controllers\FooterNavController.cs" />
+    <Compile Include="Controllers\HwEventWidgetController.cs" />
+    <Compile Include="Controllers\HwTabsWrapperController.cs" />
+    <Compile Include="Controllers\HwVideoWidgetController.cs" />
+    <Compile Include="Controllers\MemberHeroController.cs" />
+    <Compile Include="Controllers\MrLinksController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\TabWrapperController.cs" />
     <Compile Include="Controllers\fadCalendarController.cs" />
@@ -141,7 +165,13 @@
     <Compile Include="Controllers\TopNavController.cs" />
     <Compile Include="Controllers\MediCalPlanController.cs" />
     <Compile Include="Models\DualChoicePlanCtrlModel.cs" />
+    <Compile Include="Models\ExtraFooterNavCtrlModel.cs" />
     <Compile Include="Models\FooterNavCtrlModel.cs" />
+    <Compile Include="Models\HwEventWidgetCtrlModel.cs" />
+    <Compile Include="Models\HwTabsWrapperCtrlModel.cs" />
+    <Compile Include="Models\HwVideoWidgetCtrlModel.cs" />
+    <Compile Include="Models\MemberHeroCtrlModel.cs" />
+    <Compile Include="Models\MrLinksCtrlModel.cs" />
     <Compile Include="Models\NavigationCtrlModel.cs" />
     <Compile Include="Models\TabWrapperCtrModel.cs" />
     <Compile Include="Models\HeroSliderCtrlModel.cs" />
@@ -161,7 +191,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />
+    <Folder Include="Views\ExtraFooterNav\" />
     <Folder Include="Views\FooterNav\" />
+    <Folder Include="Views\HwCTA\" />
+    <Folder Include="Views\hwTabsWrapper\" />
+    <Folder Include="Views\HwVideoWidget\" />
+    <Folder Include="Views\MemberHero\" />
+    <Folder Include="Views\MrLinks\" />
     <Folder Include="Views\Navigation\" />
   </ItemGroup>
   <PropertyGroup>

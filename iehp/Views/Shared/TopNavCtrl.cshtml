@@ -16,12 +16,12 @@
 </div>
 
 <div class="row">
-    <div class="col-3 text-left">
-        <img class="smallLogo" src="https://ww3.iehp.org/Images/IEHP_LOGO_w194xh106.png" />
+    <div class="col-3 text-left menuTopPadding">
+        <a href="/" alt="IEHP Logo" class="logo"><img class="smallLogo" src="https://ww3.iehp.org/Images/IEHP_LOGO_w194xh106.png" /></a>
     </div>
 
-    <div class="col-21 row justify-content-end">
-        <div id="megaNavToggle" class="col-13 row">
+    <div class="col-21 row justify-content-end menuTopPadding">
+        <div id="megaNavToggle" class="col-16 row justify-content-end">
             <ul class="navMenu">
                 @foreach (var child in Model.Guid2List)
                 {
@@ -35,10 +35,10 @@
             <div id="searchLinkWrapper" class="searchlink">
                 <i class="fa fa-search fa-custom"></i>
                 <div id="searchBox" class="searchform">
-                    <form id="search" action="">
+                    <div id="search">
                         <input type="text" class="s" id="s" name="s" placeholder="Enter search term">
                         <button type="submit" class="sbtn"><i class="fa fa-search"></i></button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 ﻿@using Sitecore.Mvc
 @model iehp.FooterNav.Models.NavigationViewModel
 
-<div class="col-20 row">
+<div class="col-19 row">
     <div class="col-4 topPadding">
         <ul class="footerNavMenu">
             @foreach (var child in Model.Guid1List)
@@ -36,14 +36,30 @@
                 <li>@Html.Sitecore().Field("Link Url", child)</li>
             }
         </ul>
+
+       <div id="socMediaLinks" class="col-24">
+           <a class="socIcons" href="#"><i class="fab fa-facebook-f"></i></a>
+           <a class="socIcons" href="#"><i class="fab fa-linkedin-in"></i></a>
+           <a class="socIcons" href="#"><i class="fab fa-twitter"></i></a>
+           <a class="socIcons" href="#"><i class="fab fa-youtube"></i></a>
+       </div>
+
     </div>
 </div>
 
+<div class="col-1 row phonePadding">
+    <i class="fa fa-phone grey" aria-hidden="true"></i>
+</div>
+
 <div id="secondaryFooterLinks" class="col-4 topPadding">
+    <p class="phoneText">Get In Touch</p>
     <ul class="footerNavMenu">
         @foreach (var child in Model.Guid5List)
         {
-            <li>@Html.Sitecore().Field("Link Url", child)</li>
+        <li class="smallLinkName">@Html.Sitecore().Field("Link Name", child)</li>
+        <li class="phoneLinks">@Html.Sitecore().Field("Link Url", child)</li>
+        <br />
         }
     </ul>
 </div>
+

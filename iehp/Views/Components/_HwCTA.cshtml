@@ -1,0 +1,20 @@
+﻿@using Sitecore.Data.Fields
+@using Sitecore.Data.Items
+@using Sitecore.Mvc
+@using Sitecore.Resources.Media
+
+@{
+    Item item = Sitecore.Context.Item;
+    ImageField imgField = ((ImageField)item.Fields["Health and Wellness CTA Image"]);
+}
+
+<div id="hwCTAImg">
+    <img src="@MediaManager.GetMediaUrl(imgField.MediaItem)" alt="" />
+</div>
+
+<h6 class="topPadding"><strong>@Html.Sitecore().Field("Health and Wellness CTA Title")</strong></h6>
+<p>@Html.Sitecore().Field("Health and Wellness CTA Text")</p>
+
+<div class="topPadding flexbox">
+    <a href="#" class="btnSize planButton" alt="@Html.Sitecore().Field("Health and Wellness CTA Button")">@Html.Sitecore().Field("Health and Wellness CTA Button")</a>
+</div>

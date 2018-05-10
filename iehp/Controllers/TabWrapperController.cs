@@ -38,7 +38,7 @@ namespace iehp.Controllers
                     ViewBag.CTA = Sitecore.Context.Database.GetItem("110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9").Fields["Find a Doctor CTA"];
                 }
 
-                ViewBag.ecTitle = "<h4>Upcoming Events - Find a Doctor Tab</h4>";
+                ViewBag.ecTitle = "<h4 id='ueHeader'>Upcoming Events</h4>";
                 ViewBag.ecLink1 = "<a class='eventLink1 nav-link active' href='#' data-toggle='tab'>Community</a>";
                 ViewBag.ecLink2 = "<a class='eventLink2 nav-link' href='#' data-toggle='tab'>Health</a>";
 
@@ -63,7 +63,7 @@ namespace iehp.Controllers
                     ViewBag.CTA = Sitecore.Context.Database.GetItem("110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9").Fields["Urgent Care CTA"];
                 }
 
-                ViewBag.ecTitle = "<h4>Upcoming Events - Urgent Care Tab</h4>";
+                ViewBag.ecTitle = "<h4>Upcoming Events</h4>";
                 ViewBag.ecLink1 = "<a class='eventLink1 nav-link active' href='#' data-toggle='tab'>Doctors</a>";
                 ViewBag.ecLink2 = "<a class='eventLink2 nav-link' href='#' data-toggle='tab'>Hospitals</a>";
 
@@ -88,7 +88,7 @@ namespace iehp.Controllers
                     ViewBag.CTA = Sitecore.Context.Database.GetItem("110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9").Fields["Pharmacy CTA"];
                 }
 
-                ViewBag.ecTitle = "<h4>Upcoming Events - Pharmacy Tab</h4>";
+                ViewBag.ecTitle = "<h4>Upcoming Events</h4>";
                 ViewBag.ecLink1 = "<a class='eventLink1 nav-link active' href='#' data-toggle='tab'>Drugs</a>";
                 ViewBag.ecLink2 = "<a class='eventLink2 nav-link' href='#' data-toggle='tab'>Cartels</a>";
 

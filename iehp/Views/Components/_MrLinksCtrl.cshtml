@@ -1,0 +1,34 @@
+﻿@using Sitecore.Mvc
+@model iehp.MrLinks.Models.NavigationViewModel
+
+<div class="col-8 allPadding vertSep fixMargin2">
+    <strong>Forms</strong>
+    <ul class="mrLinks">
+        @foreach (var child in Model.Guid1List)
+        {
+            <li>@Html.Sitecore().Field("Link Url", child)</li>
+        }
+    </ul>
+</div>
+
+<div class="col-15 allPadding row justify-content-between fixMargin2">
+    <div class="col-24"><strong>Helpful Services</strong></div>
+
+    <div class="col-11 row fixMargin">
+        <ul class="mrLinks">
+            @foreach (var child in Model.Guid2List)
+            {
+                <li>@Html.Sitecore().Field("Link Url", child)</li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-11 fixMargin">
+        <ul class="mrLinks">
+            @foreach (var child in Model.Guid3List)
+            {
+                <li>@Html.Sitecore().Field("Link Url", child)</li>
+            }
+        </ul>
+    </div>
+</div>

@@ -4,128 +4,132 @@
 @using Sitecore.Resources.Media
 @model iehp.TabWrapper.Models.EventViewModel
 
-<div id="tabCTA" class="col-12 allPadding">
-   @Html.Raw(@ViewBag.CTA)
-</div>
-
-<div id="tabForm" class="col-12">
-    <div class="formWrapper">
-        <div class="row">
-            <select id="planSelector" name="plansSelector" value="">
-                <option value="All Plans" selected>All Plans</option>
-                <option value="Medi-Cal">Medi-Cal</option>
-                <option value="DualChoice">Dual Choice</option>
-            </select>
-        </div>
-
-        <div class="row topMargin text-center">
-            <div class="col-8  text-left vertDivider">
-                <input id="zipCodeInput" type="text" maxlength="5" placeholder="Zip Code" />
-            </div>
-            <div class="col-8 vertDivider">
-                <a class="advSearchLink" href="#" alt="Advanced Search Link">Advanced Search</a>
-            </div>
-            <div class="searchBlock col-8">
-                <a class="stdSearchLink" href="#" alt="Standard Search Link">Search</a>
-            </div>
-        </div>
+<div id="tabCTA" class="col-12">
+    <div class="allPadding">
+        @Html.Raw(@ViewBag.CTA)
     </div>
 </div>
 
-<div class="newsArticles col-8">
-    <div class="col-24">
-        <h4>Latest News</h4>
-    </div>
-
-    @foreach (var child in ViewBag.guidList3)
-    {
-        <div class="row">
-            <div class="col-4">
-                <span class="newsDay">@Html.Sitecore().Field("Event Date", child)</span>
-                <br />
-                <span class="newsMonth">@Html.Sitecore().Field("Event Month", child)</span>
-                <br />
-                <span class="newsYear">@Html.Sitecore().Field("Event Year", child)</span>
+    <div id="tabForm" class="col-12">
+        <div class="formWrapper">
+            <div class="row">
+                <select id="planSelector" name="plansSelector" value="">
+                    <option value="All Plans" selected>All Plans</option>
+                    <option value="Medi-Cal">Medi-Cal</option>
+                    <option value="DualChoice">Dual Choice</option>
+                </select>
             </div>
 
-            <div class="col-18">
-                <strong>@Html.Sitecore().Field("Title", child)</strong>
-                <p class="noMargin">@Html.Sitecore().Field("Description", child)</p>
+            <div class="row topMargin text-center">
+                <div class="col-8  text-left vertDivider">
+                    <input id="zipCodeInput" type="text" maxlength="5" placeholder="Zip Code" />
+                </div>
+                <div class="col-8 vertDivider">
+                    <a class="advSearchLink" href="#" alt="Advanced Search Link">Advanced Search</a>
+                </div>
+                <div class="searchBlock col-8">
+                    <a class="stdSearchLink" href="#" alt="Standard Search Link">Search</a>
+                </div>
             </div>
         </div>
-
-        <hr />
-    }
-
-    <div class="col-23 text-right">
-        <ul class="pager">
-            <li><a href="#">&larr; Prev</a></li>
-            <li><a href="#">Next &rarr;</a></li>
-        </ul>
     </div>
 
-</div>
+    <div class="newsArticles col-8 allPadding itemSep">
+        <div class="col-24">
+            <h4>Latest News</h4>
+        </div>
 
-
-<div id="eventCalendarWrapper" class="col-16 extraBottom row">
-    <div id="eventCalHeader" class="col-18">@Html.Raw(@ViewBag.ecTitle)</div>
-    <div class="col-6 text-right">
-        <ul class="pager">
-            <li><a href="#">&larr; Prev</a></li>
-            <li><a href="#">Next &rarr;</a></li>
-        </ul>
-    </div>
-
-    <div class="col-24">
-        <ul id="eventsTab" class="nav nav-tabs nav-fill">
-            <li class="nav-item">
-                <div id="eventTab1"></div>
-                <div id="eventLink1">@Html.Raw(@ViewBag.ecLink1)</div>
-            </li>
-            <li class="nav-item">
-                <div id="eventTab2"></div>
-                <div id="eventLink2">@Html.Raw(@ViewBag.ecLink2)</div>
-            </li>
-        </ul>
-
-    </div>
-
-
-    <div class="eventBlock1 card-deck">
-        @foreach (var child in ViewBag.guidList1)
+        @foreach (var child in ViewBag.guidList3)
         {
-            Item item = Sitecore.Context.Item;
-            ImageField imgField = ((ImageField)child.Fields["Image"]);
+            <div class="row">
+                <div class="col-4">
+                    <span class="newsDay">@Html.Sitecore().Field("Event Date", child)</span>
+                    <br />
+                    <span class="newsMonth">@Html.Sitecore().Field("Event Month", child)</span>
+                    <br />
+                    <span class="newsYear">@Html.Sitecore().Field("Event Year", child)</span>
+                </div>
 
-            <div class="card" style="margin-right:20px;">
-                <img class="card-img-top" src="@MediaManager.GetMediaUrl(imgField.MediaItem)" />
-                <div class="card-body">
-                    <div class="card-text">
-                        <h6 class="cardTitle">@Html.Sitecore().Field("Title", child)</h6>
-                        <p class="cardDesc">@Html.Sitecore().Field("Description", child)</p>
-                    </div>
-                    <p class="date-time"><strong>Event Date:</strong> @Html.Sitecore().Field("Event Date", child)</p>
+                <div class="col-18">
+                    <strong>@Html.Sitecore().Field("Title", child)</strong>
+                    <p class="noMargin">@Html.Sitecore().Field("Description", child)</p>
+                </div>
+
+                <div class="col-23 text-right">
+                    <a class="newsArrow" href="#">View Article &rarr;</a>
                 </div>
             </div>
         }
+
+        @*<div class="col-23 text-right">
+            <ul class="pager">
+                <li><a href="#">&larr; Prev</a></li>
+                <li><a href="#">Next &rarr;</a></li>
+            </ul>
+        </div>*@
+
     </div>
 
-    <div class="eventBlock2 card-deck">
-        @foreach (var child in ViewBag.guidList2)
-        {
-            Item item = Sitecore.Context.Item;
-            ImageField imgField = ((ImageField)child.Fields["Image"]);
 
-            <div class="card" style="margin-right:20px;">
-                <img class="card-img-top" src="@MediaManager.GetMediaUrl(imgField.MediaItem)" />
-                <div class="card-body">
-                    <div class="card-text">
-                        <h6 class="cardTitle">@Html.Sitecore().Field("Title", child)</h6>
-                        <p class="cardDesc">@Html.Sitecore().Field("Description", child)</p>
+    <div id="eventCalendarWrapper" class="col-16 extraBottom row allPadding itemSep">
+        <div id="eventCalHeader" class="col-18">@Html.Raw(@ViewBag.ecTitle)</div>
+        <div class="col-6 text-right">
+            <ul class="pager">
+                <li><a href="#">&larr; Prev</a></li>
+                <li><a href="#">Next &rarr;</a></li>
+            </ul>
+        </div>
+
+        <div class="col-24">
+            <ul id="eventsTab" class="nav nav-tabs nav-fill">
+                <li class="nav-item">
+                    <div id="eventTab1"></div>
+                    <div id="eventLink1">@Html.Raw(@ViewBag.ecLink1)</div>
+                </li>
+                <li class="nav-item">
+                    <div id="eventTab2"></div>
+                    <div id="eventLink2">@Html.Raw(@ViewBag.ecLink2)</div>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="eventBlock1 card-deck">
+            @foreach (var child in ViewBag.guidList1)
+            {
+                Item item = Sitecore.Context.Item;
+                ImageField imgField = ((ImageField)child.Fields["Image"]);
+
+                <div class="card" style="margin-right:20px;">
+                    <img class="card-img-top" src="@MediaManager.GetMediaUrl(imgField.MediaItem)" />
+                    <div class="card-body">
+                        <div class="card-text">
+                            <h6 class="cardTitle">@Html.Sitecore().Field("Title", child)</h6>
+                            @*<p class="cardDesc">@Html.Sitecore().Field("Description", child)</p>*@
+                        </div>
+                        <p class="date-time">@Html.Sitecore().Field("Event Date", child)</p>
                     </div>
-                    <p class="date-time"><strong>Event Date:</strong> @Html.Sitecore().Field("Event Date", child)</p>
                 </div>
-            </div>
-        }
+            }
+        </div>
+
+        <div class="eventBlock2 card-deck">
+            @foreach (var child in ViewBag.guidList2)
+            {
+                Item item = Sitecore.Context.Item;
+                ImageField imgField = ((ImageField)child.Fields["Image"]);
+
+                <div class="card" style="margin-right:20px;">
+                    <img class="card-img-top" src="@MediaManager.GetMediaUrl(imgField.MediaItem)" />
+                    <div class="card-body">
+                        <div class="card-text">
+                            <h6 class="cardTitle">@Html.Sitecore().Field("Title", child)</h6>
+                            @*<p class="cardDesc">@Html.Sitecore().Field("Description", child)</p>*@
+                        </div>
+                        <p class="date-time">@Html.Sitecore().Field("Event Date", child)</p>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
-</div>

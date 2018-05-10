@@ -25,6 +25,48 @@
     </div>
 
     <div id="imageSlider" class="row">
+        <div class="sticky-container">
+            <ul class="sticky">
+                <li>
+                    <div class="stickyWrap1 fbPad">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+
+                    <div class="stickyWrap2">
+                        <p><a href="https://www.facebook.com/" target="_blank">Like Us on<br>Facebook</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="stickyWrap1 liPad">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+
+                    <div class="stickyWrap2">
+                        <p><a href="https://www.linkedin.com/" target="_blank">Follow Us on<br>LinkedIn</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="stickyWrap1 twPad">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+
+
+                    <div class="stickyWrap2">
+                        <p><a href="https://twitter.com/" target="_blank">Follow Us on<br>Twitter</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="stickyWrap1 ytPad">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+
+                    <div class="stickyWrap2">
+                        <p><a href="http://www.youtube.com/" target="_blank">Subscribe on<br>YouYube</a></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
         @Html.Sitecore().Placeholder("imageSlider")
     </div>
 
@@ -32,13 +74,13 @@
         <div id="mainTabsNav" class="col-14 mx-auto">
             <ul class="nav nav-tabs nav-fill">
                 <li class="nav-item">
-                    <a id="doctorTab" class="mainTab nav-link active" href="#" data-toggle="tab">Doctor</a>
+                    <a id="doctorTab" class="mainTab nav-link active" href="#" data-toggle="tab"><i class="fas fa-stethoscope"></i> Doctor</a>
                 </li>
                 <li class="nav-item">
-                    <a id="urgentTab" class="mainTab nav-link" href="#" data-toggle="tab">Urgent Care</a>
+                    <a id="urgentTab" class="mainTab nav-link" href="#" data-toggle="tab"><i class="fa fa-ambulance"></i> Urgent Care</a>
                 </li>
                 <li class="nav-item">
-                    <a id="pharmacyTab" class="mainTab nav-link" href="#" data-toggle="tab">Pharmacy</a>
+                    <a id="pharmacyTab" class="mainTab nav-link" href="#" data-toggle="tab"><i class="fa fa-medkit"></i> Pharmacy</a>
                 </li>
             </ul>
 
@@ -62,12 +104,12 @@
                 </div>
             </div>
 
-            <div id="plansWrapper" class="row">
-                <div class="col-12 extraBottom">
+            <div id="plansWrapper" class="row justify-content-between">
+                <div class="col-12 backColor largePadding">
                     @Html.Sitecore().Placeholder("mediPlan")
                 </div>
 
-                <div class="col-12">
+                <div class="col-11 backColor largePadding">
                     @Html.Sitecore().Placeholder("dualChoicePlan")
                 </div>
             </div>
@@ -78,6 +120,12 @@
     <div id="footer" class="container-fluid">
         <div id="footerLinks" class="col-14 mx-auto row">
             @Html.Sitecore().Placeholder("footerLinks")
+        </div>
+    </div>
+
+    <div id="extraFooter" class="container-fluid">
+        <div class="col-14 mx-auto row topPadding text-center">
+            @Html.Sitecore().Placeholder("extraFooterLinks")
         </div>
     </div>
 

@@ -1,0 +1,63 @@
+﻿@using Sitecore.Mvc
+@model iehp.HwVideoWidget.Models.EventViewModel
+
+<div id="youtubeVideoWrapper" class="col-13 row allPadding lightBackground">
+    <div class="responsiveVideo">
+        <div id="youtube" class="videoSize"></div>
+    </div>
+</div>
+
+<div id="vimeoVideoWrapper" class="col-13 row allPadding lightBackground">
+    <div class="responsiveVideo">
+        <div id="vimeo" class="videoSize"></div>
+    </div>
+</div>
+
+@foreach (var child in ViewBag.activeVideoList)
+{
+    string vidType = @Html.Sitecore().Field("Video Type", child).ToString();
+    string vimVideoID = @Html.Sitecore().Field("Vimeo Video ID", child).ToString();
+    string ytVideoID = @Html.Sitecore().Field("Youtube Video ID", child).ToString();
+
+    <script type="text/javascript">
+    if ("@vidType" == "Youtube") {
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube', {
+                videoId: '@ytVideoID',
+                autoplay: 'false',
+                rel: 'false',
+                playerVars: {
+                    'showinfo': 0
+                },
+            });
+        }
+
+        function stopVideo() {
+            player.stopVideo();
+        }
+
+        $('#youtubeVideoWrapper').css('display', 'block');
+
+    } else if ("@vidType" == "Vimeo") {
+        var options = {
+            id: '@vimVideoID',
+            width: 580,
+            height: 270,
+            title: false,
+            byline: false,
+            badge: false,
+            vp_title: false,
+            loop: false
+        };
+
+        var player = new Vimeo.Player('vimeo', options);
+        $('#vimeoVideoWrapper').css('display', 'block');
+    }
+    </script>
+}
