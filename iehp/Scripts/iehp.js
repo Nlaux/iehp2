@@ -15,7 +15,6 @@
             ).then(function () {
                 console.log("loading successful");
             });
-
         }
 
         if (window.location.href.indexOf("For-Members") > -1) {
@@ -257,7 +256,7 @@
             var path = "http://localhost:8987/solr/iehp_sitecore_web_index/select?q=_content:";
 
             //querystring to write to resultsDiv. Show 10 results at a time.
-            queryString = path + searchTerm + "&fl=_name,_fullpath,_content,extension_t_en&omitHeader=true&start=" + startFrom + "&rows=10000&wt=json";
+            queryString = path + searchTerm + "&hl=true&hl.fl=_content&hl.usePhraseHighlighter=true&hl.requireFieldMatch=true&omitHeader=true&fl=highlighting,_name,_fullpath,_content,extension_t_en&start=" + startFrom + "&rows=10000&wt=json";
 
             //performQuery
             processQuery();
@@ -390,7 +389,7 @@
                 for (i = 0; i < results; i++) {
                     //determine doc type & build item link
                     if (data.response.docs[i].extension_t_en == 'undefined') {
-                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '') + '.aspx';
+                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '');
                         altTag = data.response.docs[i]._name;
 
                     } else if (data.response.docs[i].extension_t_en == 'pdf' || data.response.docs[i].extension_t_en == 'doc' || data.response.docs[i].extension_t_en == 'txt' || data.response.docs[i].extension_t_en == 'rtf') {
@@ -398,7 +397,7 @@
                         var altTag = data.response.docs[i]._name;
 
                     } else {
-                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '') + '.aspx';
+                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '');
                         altTag = data.response.docs[i]._name;
                     }
 
@@ -406,10 +405,8 @@
                     var descriptTemp = data.response.docs[i]._content.toString();
                     var descriptTempShort = descriptTemp.substr(0, 135);
 
-                    console.log(data.response.docs[i]._fullpath);
-
                     //write item(s) to div
-                    $('#results').append("<a href='" + itemLink + "'alt='" + altTag + "'><span class=resultName>" + data.response.docs[i]._name + "</span></a><Br />" + descriptTempShort + '...' + '<br /><span class="divider"></span><Br />');
+                    $('#results').append("<li><a href='" + itemLink + "'alt='" + altTag + "'><span class=resultName>" + data.response.docs[i]._name + "</span></a><Br />" + descriptTempShort + '...' + '</li><span class="divider"></span>');
                 }
 
                 //more than 10 results, standard 10 per page
@@ -417,7 +414,7 @@
                 for (i = 0; i < 10; i++) {
                     //determine doc type & build item link
                     if (data.response.docs[i].extension_t_en == 'undefined') {
-                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '') + '.aspx';
+                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '');
                         altTag = data.response.docs[i]._name;
 
                     } else if (data.response.docs[i].extension_t_en == 'pdf' || data.response.docs[i].extension_t_en == 'doc' || data.response.docs[i].extension_t_en == 'txt' || data.response.docs[i].extension_t_en == 'rtf') {
@@ -425,7 +422,7 @@
                         var altTag = data.response.docs[i]._name;
 
                     } else {
-                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '') + '.aspx';
+                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '');
                         altTag = data.response.docs[i]._name;
                     }
 
@@ -433,10 +430,8 @@
                     var descriptTemp = data.response.docs[i]._content.toString();
                     var descriptTempShort = descriptTemp.substr(0, 135);
 
-                    console.log(data.response.docs[i]._fullpath);
-
                     //write item(s) to div
-                    $('#results').append("<a href='" + itemLink + "'alt='" + altTag + "'><span class=resultName>" + data.response.docs[i]._name + "</span></a><Br />" + descriptTempShort + '...' + '<br /><span class="divider"></span><Br />');
+                    $('#results').append("<li><a href='" + itemLink + "'alt='" + altTag + "'><span class=resultName>" + data.response.docs[i]._name + "</span></a><Br />" + descriptTempShort + '...' + '</li><span class="divider"></span>');
                 }
             }
         }

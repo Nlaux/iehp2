@@ -1,12 +1,13 @@
 ﻿@using Sitecore.Mvc
 @using Sitecore.Mvc.Analytics.Extensions
 
-
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
 <head>
     <title>@Html.Sitecore().Field("title", new { DisableWebEdit = true })</title>
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
@@ -26,29 +27,25 @@
         </div>
     </div>
 
+    @RenderPage("~/Views/Shared/_StickySocial.cshtml")
+
+
     <div class="container-fluid">
-        <div class="col-14 mx-auto row itemSep justify-content-between">
-            <div class="col-24 row">
-                <div id="searchHeader" class="col-24 row">
-                    <div class="col-12 allPadding">
-                        <h3 class="resultsHeader">Search Results:</h3>
-                        <div id="paginationHelper"></div>
-                    </div>
-
-                    <div class="col-12 align-bottom allPadding justify-content-end">
-                        <div id="paginationWrapper"></div>
-                    </div>
-                </div>
-
-                <div id="resultsWrapper" class="col-24 subNavBackground">
-                    <div id="results"></div>
-                    <div id="loading"></div>
-                </div>
+        <div class="col-14 mx-auto row itemSep">
+            <div id="formHeader" class="col-24 greenBackground allPadding white">
+                <h2>Ask IEHP</h2>
+                <p>If you have any questions or feedback about IEHP's services and programs, please fill out the form below. </p>
             </div>
         </div>
     </div>
 
-    @RenderPage("~/Views/Shared/_StickySocial.cshtml")
+    <div class="container-fluid">
+        <div class="col-14 mx-auto row">
+            <div class="col-24 lightBackground allPadding">
+                @Html.Sitecore().Placeholder("Content")
+            </div>
+        </div>
+    </div>
 
 
     <div id="footer" class="container-fluid">
@@ -66,5 +63,6 @@
 
 
     <script src="~/Scripts/bootstrap.min.js"></script>
+
 </body>
 </html>

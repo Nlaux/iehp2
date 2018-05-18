@@ -114,6 +114,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\sc-search.js" />
     <Content Include="search.html" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\HomePageLayout.cshtml" />
@@ -121,7 +122,7 @@
     <Content Include="Views\Shared\TopNavCtrl.cshtml" />
     <Content Include="Views\Components\HeroSliderCtrl.cshtml" />
     <Content Include="Views\Shared\BlankPageLayout.cshtml" />
-    <Content Include="Views\Components\BlankPage.cshtml" />
+    <Content Include="Views\Components\SCSearchPage.cshtml" />
     <Content Include="Views\Components\MediCalPlanCtrl.cshtml" />
     <Content Include="Views\Components\DualChoicePlanCtrl.cshtml" />
     <Content Include="Views\Components\_TabWrapperCtrl.cshtml" />
@@ -144,6 +145,9 @@
     <Content Include="Views\Components\_MrLinksCtrl.cshtml" />
     <Content Include="Views\Shared\SearchResultsLayout.cshtml" />
     <Content Include="Views\Shared\_ExtraFooterNavCtrl.cshtml" />
+    <Content Include="Views\Shared\_StickySocial.cshtml" />
+    <Content Include="Views\Components\BlankPage.cshtml" />
+    <Content Include="Views\Shared\ContactPageLayout.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -191,14 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />
-    <Folder Include="Views\ExtraFooterNav\" />
-    <Folder Include="Views\FooterNav\" />
-    <Folder Include="Views\HwCTA\" />
-    <Folder Include="Views\hwTabsWrapper\" />
-    <Folder Include="Views\HwVideoWidget\" />
-    <Folder Include="Views\MemberHero\" />
-    <Folder Include="Views\MrLinks\" />
-    <Folder Include="Views\Navigation\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

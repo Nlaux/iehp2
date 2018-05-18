@@ -28,10 +28,11 @@
                  <div class="carousel-caption">
                      <h3>@Html.Raw(mediaTitle)</h3>
                      <h4>@Html.Raw(mediaDesc)</h4>
-                     <div style="@Html.Sitecore().Field("Styling", child)">
-                         @Html.Sitecore().Field("Custom Text", child)
-                     </div>
-                 </div>
+                     <div class="heroImgTextWrapper">
+                   @*<div style="@Html.Sitecore().Field("Styling", child)">*@
+                        @Html.Sitecore().Field("Custom Text", child)
+                    </div>
+                </div>
             </div>
 
             first = false;

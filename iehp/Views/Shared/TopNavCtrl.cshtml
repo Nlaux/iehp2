@@ -4,7 +4,7 @@
 @using Sitecore.Resources.Media
 @model iehp.TopNav.Models.NavigationViewModel
 
-<div id="subNavMenuWrapper" class="col-24 text-right">
+<div id="subNavMenuWrapper" class="text-right d-none d-sm-block">
     <ul class="navMenu small">
         @foreach (var child in Model.Guid1List)
         {
@@ -16,12 +16,12 @@
 </div>
 
 <div class="row">
-    <div class="col-3 text-left menuTopPadding">
+    <div class="col-8 col-sm-3 logoAlign">
         <a href="/" alt="IEHP Logo" class="logo"><img class="smallLogo" src="https://ww3.iehp.org/Images/IEHP_LOGO_w194xh106.png" /></a>
     </div>
 
-    <div class="col-21 row justify-content-end menuTopPadding">
-        <div id="megaNavToggle" class="col-16 row justify-content-end">
+    <div class="col-11 col-sm-21 row justify-content-end menuTopPadding">
+        <div id="megaNavToggle" class="col-16 d-none d-sm-block row justify-content-end">
             <ul class="navMenu">
                 @foreach (var child in Model.Guid2List)
                 {
@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-3 d-none d-sm-block">
             <div class="mainNavDropList navMenu float-right">
                 <a href="#" id="mainNavDropLink" class="dropbtn">Portal Login &or;</a>
                 <div id="mainNavDropDown" class="dropdown-content text-left">

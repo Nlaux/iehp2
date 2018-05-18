@@ -1,7 +1,7 @@
 ﻿@using Sitecore.Mvc
 @model iehp.FooterNav.Models.NavigationViewModel
 
-<div class="col-19 row">
+<div id="priFooterLinks" class="col-19 row footerGrey">
     <div class="col-4 topPadding">
         <ul class="footerNavMenu">
             @foreach (var child in Model.Guid1List)
@@ -38,28 +38,81 @@
         </ul>
 
        <div id="socMediaLinks" class="col-24">
-           <a class="socIcons" href="#"><i class="fab fa-facebook-f"></i></a>
-           <a class="socIcons" href="#"><i class="fab fa-linkedin-in"></i></a>
-           <a class="socIcons" href="#"><i class="fab fa-twitter"></i></a>
-           <a class="socIcons" href="#"><i class="fab fa-youtube"></i></a>
+           <a class="socIcons" href="https://www.facebook.com/IEHP.org"><i class="fab fa-facebook-f"></i></a>
+           <a class="socIcons" href="http://www.linkedin.com/company/68485"><i class="fab fa-linkedin-in"></i></a>
+           <a class="socIcons" href="http://twitter.com/IEHP_healthcare"><i class="fab fa-twitter"></i></a>
+           <a class="socIcons" href="https://www.youtube.com/channel/UCrX2w-mgNlvOmyLSBgGCP5A"><i class="fab fa-youtube"></i></a>
        </div>
 
     </div>
 </div>
 
-<div class="col-1 row phonePadding">
-    <i class="fa fa-phone grey" aria-hidden="true"></i>
+<div class="col-24 d-sm-none">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <span class="glyphicon glyphicon-folder-close">
+                        </span>About IEHP
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <ul class="footerNavMenu">
+                        @foreach (var child in Model.Guid1List)
+                        {
+                             <li>@Html.Sitecore().Field("Link Url", child)</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div id="secondaryFooterLinks" class="col-4 topPadding">
-    <p class="phoneText">Get In Touch</p>
-    <ul class="footerNavMenu">
-        @foreach (var child in Model.Guid5List)
-        {
-        <li class="smallLinkName">@Html.Sitecore().Field("Link Name", child)</li>
-        <li class="phoneLinks">@Html.Sitecore().Field("Link Url", child)</li>
-        <br />
-        }
-    </ul>
+
+
+<div class="col-sm-5 row footerBlue">
+    <div class="col-3 offset-1 col-sm-3 topPadding">
+        <i class="fa fa-phone grey" aria-hidden="true"></i>
+    </div>
+
+    <div id="secondaryFooterLinks" class="col-18 topPadding">
+        <p class="phoneText">Get In Touch</p>
+        <ul class="footerNavMenu">
+            @foreach (var child in Model.Guid5List)
+            {
+                <li class="smallLinkName">@Html.Sitecore().Field("Link Name", child)</li>
+                <li class="phoneLinks">@Html.Sitecore().Field("Link Url", child)</li>
+                <br />
+            }
+        </ul>
+    </div>
 </div>
 
+
+
+@*<table class="table">
+    <tr>
+        <td>
+            <span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class="glyphicon glyphicon-flash text-success"></span><a href="http://www.jquery2dotnet.com">News</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class="glyphicon glyphicon-file text-info"></span><a href="http://www.jquery2dotnet.com">Newsletters</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class="glyphicon glyphicon-comment text-success"></span><a href="http://www.jquery2dotnet.com">Comments</a>
+        </td>
+    </tr>
+</table>*@
