@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/styles.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet">
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/iehp.js"></script>
@@ -18,27 +19,31 @@
     @Html.Sitecore().VisitorIdentification()
 </head>
 <body>
+    @RenderPage("~/Views/Shared/_Drawer.cshtml")
+
     <div class="container-fluid">
-        <div class="col-14 mx-auto">
+        <div class="col-24 col-md-24 col-lg-20 col-xxl-14 mx-auto">
             @Html.Sitecore().Placeholder("navCtrl")
         </div>
     </div>
 
     <div id="imageSlider" class="row">
+        @RenderPage("~/Views/Shared/_StickySocial.cshtml")
+
         @Html.Sitecore().Placeholder("imageSlider")
     </div>
 
     <div class="container-fluid">
-        <div id="mainTabsNav" class="col-14 mx-auto">
+        <div id="mainTabsNav" class="col-sm-24 col-xl-20 col-xxl-14 mx-auto">
             <ul class="nav nav-tabs nav-fill">
                 <li class="nav-item">
-                    <a id="doctorTab" class="mainTab nav-link active" href="#" data-toggle="tab"><i class="fas fa-stethoscope"></i> Doctor</a>
+                    <a id="doctorTab" class="mainTab nav-link active" href="#" data-toggle="tab"><i class="fas fa-stethoscope"></i> <span class="d-none d-sm-block">Doctor</span></a>
                 </li>
                 <li class="nav-item">
-                    <a id="urgentTab" class="mainTab nav-link" href="#" data-toggle="tab"><i class="fa fa-ambulance"></i> Urgent Care</a>
+                    <a id="urgentTab" class="mainTab nav-link" href="#" data-toggle="tab"><i class="fa fa-ambulance"></i> <span class=" d-none d-sm-block">Urgent Care</span></a>
                 </li>
                 <li class="nav-item">
-                    <a id="pharmacyTab" class="mainTab nav-link" href="#" data-toggle="tab"><i class="fa fa-medkit"></i> Pharmacy</a>
+                    <a id="pharmacyTab" class="mainTab nav-link" href="#" data-toggle="tab"><i class="fa fa-medkit"></i> <span class=" d-none d-sm-block">Pharmacy</span></a>
                 </li>
             </ul>
 
@@ -63,11 +68,11 @@
             </div>
 
             <div id="plansWrapper" class="row justify-content-between">
-                <div class="col-12 backColor largePadding">
+                <div class="col-sm-12 magentaBackground largePadding">
                     @Html.Sitecore().Placeholder("mediPlan")
                 </div>
 
-                <div class="col-11 backColor largePadding">
+                <div id="planTwoWrapper" class="col-sm-11 magentaBackground largePadding">
                     @Html.Sitecore().Placeholder("dualChoicePlan")
                 </div>
             </div>
@@ -76,13 +81,13 @@
     </div>
 
     <div id="footer" class="container-fluid">
-        <div id="footerLinks" class="col-14 mx-auto row">
+        <div id="footerLinks" class="col-md-24 col-lg-20 col-xxl-14 mx-auto row">
             @Html.Sitecore().Placeholder("footerLinks")
         </div>
     </div>
 
     <div id="extraFooter" class="container-fluid">
-        <div class="col-14 mx-auto row topPadding text-center">
+        <div class="col-md-24 col-lg-20 col-xxl-14 mx-auto row topPadding text-center">
             @Html.Sitecore().Placeholder("extraFooterLinks")
         </div>
     </div>

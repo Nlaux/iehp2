@@ -5,7 +5,7 @@
         //starting point for search query & pagination
         startFrom = 0;
 
-        if (window.location == "http://iehp/") {
+        if (window.location.href.indexOf("iehp") > -1) {
             $(".eventBlock2").hide();
             $.when(
                 //Home Page doctor Tab
@@ -15,7 +15,6 @@
             ).then(function () {
                 console.log("loading successful");
             });
-
         }
 
         if (window.location.href.indexOf("For-Members") > -1) {
@@ -35,6 +34,33 @@
         if (window.location.href.indexOf("search%20results") > -1) {
             performSearch();
         }
+
+
+        //Mobile Menu
+        $("#drawerOpen").on("click", function () {
+            var $window = $(window);
+            var windowSize = $window.width();
+
+            if (windowSize < 600) {
+                var distance = "0";
+            } else if (windowSize > 767 && windowSize < 992) {
+                var distance = "50%";
+            } else {
+                var distance = "36%";
+            }
+
+            $("#drawer").css('display','block').animate({ left: distance }, 500);
+        });
+
+        $("#drawerClose").on("click", function () {
+            $('#drawer').animate({ left: '150%' },
+                {
+                duration: 500,
+                complete: function () {
+                    $('#drawer').css('display','none');
+                }
+            });
+        });
         
         //Home Page Tabs Section
         $("#doctorTab").on("click", function () {
@@ -257,7 +283,7 @@
             var path = "http://localhost:8987/solr/iehp_sitecore_web_index/select?q=_content:";
 
             //querystring to write to resultsDiv. Show 10 results at a time.
-            queryString = path + searchTerm + "&fl=_name,_fullpath,_content,extension_t_en&omitHeader=true&start=" + startFrom + "&rows=10000&wt=json";
+            queryString = path + searchTerm + "&hl=true&hl.fl=_content&hl.usePhraseHighlighter=true&hl.requireFieldMatch=true&omitHeader=true&fl=highlighting,_name,_fullpath,_content,extension_t_en&start=" + startFrom + "&rows=10000&wt=json";
 
             //performQuery
             processQuery();
@@ -390,7 +416,7 @@
                 for (i = 0; i < results; i++) {
                     //determine doc type & build item link
                     if (data.response.docs[i].extension_t_en == 'undefined') {
-                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '') + '.aspx';
+                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '');
                         altTag = data.response.docs[i]._name;
 
                     } else if (data.response.docs[i].extension_t_en == 'pdf' || data.response.docs[i].extension_t_en == 'doc' || data.response.docs[i].extension_t_en == 'txt' || data.response.docs[i].extension_t_en == 'rtf') {
@@ -398,7 +424,7 @@
                         var altTag = data.response.docs[i]._name;
 
                     } else {
-                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '') + '.aspx';
+                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '');
                         altTag = data.response.docs[i]._name;
                     }
 
@@ -406,10 +432,8 @@
                     var descriptTemp = data.response.docs[i]._content.toString();
                     var descriptTempShort = descriptTemp.substr(0, 135);
 
-                    console.log(data.response.docs[i]._fullpath);
-
                     //write item(s) to div
-                    $('#results').append("<a href='" + itemLink + "'alt='" + altTag + "'><span class=resultName>" + data.response.docs[i]._name + "</span></a><Br />" + descriptTempShort + '...' + '<br /><span class="divider"></span><Br />');
+                    $('#results').append("<li><a href='" + itemLink + "'alt='" + altTag + "'><span class=resultName>" + data.response.docs[i]._name + "</span></a><Br />" + descriptTempShort + '...' + '</li><span class="divider"></span>');
                 }
 
                 //more than 10 results, standard 10 per page
@@ -417,7 +441,7 @@
                 for (i = 0; i < 10; i++) {
                     //determine doc type & build item link
                     if (data.response.docs[i].extension_t_en == 'undefined') {
-                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '') + '.aspx';
+                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '');
                         altTag = data.response.docs[i]._name;
 
                     } else if (data.response.docs[i].extension_t_en == 'pdf' || data.response.docs[i].extension_t_en == 'doc' || data.response.docs[i].extension_t_en == 'txt' || data.response.docs[i].extension_t_en == 'rtf') {
@@ -425,7 +449,7 @@
                         var altTag = data.response.docs[i]._name;
 
                     } else {
-                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '') + '.aspx';
+                        itemLink = 'http://iehp/' + data.response.docs[i]._fullpath.replace('/sitecore/content/', '');
                         altTag = data.response.docs[i]._name;
                     }
 
@@ -433,10 +457,8 @@
                     var descriptTemp = data.response.docs[i]._content.toString();
                     var descriptTempShort = descriptTemp.substr(0, 135);
 
-                    console.log(data.response.docs[i]._fullpath);
-
                     //write item(s) to div
-                    $('#results').append("<a href='" + itemLink + "'alt='" + altTag + "'><span class=resultName>" + data.response.docs[i]._name + "</span></a><Br />" + descriptTempShort + '...' + '<br /><span class="divider"></span><Br />');
+                    $('#results').append("<li><a href='" + itemLink + "'alt='" + altTag + "'><span class=resultName>" + data.response.docs[i]._name + "</span></a><Br />" + descriptTempShort + '...' + '</li><span class="divider"></span>');
                 }
             }
         }

@@ -20,19 +20,19 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="col-sm-14 mx-auto">
+        <div class="col-24 col-md-24 col-lg-20 col-xxl-14 mx-auto">
             @Html.Sitecore().Placeholder("navCtrl")
         </div>
     </div>
 
     <div id="imageSlider" class="row">
         @RenderPage("~/Views/Shared/_StickySocial.cshtml")
-        
+
         @Html.Sitecore().Placeholder("imageSlider")
     </div>
 
     <div class="container-fluid">
-        <div id="mainTabsNav" class="col-sm-14 mx-auto">
+        <div id="mainTabsNav" class="col-sm-24 col-xl-20 col-xxl-14 mx-auto">
             <ul class="nav nav-tabs nav-fill">
                 <li class="nav-item">
                     <a id="doctorTab" class="mainTab nav-link active" href="#" data-toggle="tab"><i class="fas fa-stethoscope"></i> <span class="d-none d-sm-block">Doctor</span></a>
@@ -79,13 +79,13 @@
     </div>
 
     <div id="footer" class="container-fluid">
-        <div id="footerLinks" class="col-sm-14 mx-auto row">
+        <div id="footerLinks" class="col-md-24 col-lg-20 col-xxl-14 mx-auto row">
             @Html.Sitecore().Placeholder("footerLinks")
         </div>
     </div>
 
     <div id="extraFooter" class="container-fluid">
-        <div class="col-sm-14 mx-auto row topPadding text-center">
+        <div class="col-md-24 col-lg-20 col-xxl-14 mx-auto row topPadding text-center">
             @Html.Sitecore().Placeholder("extraFooterLinks")
         </div>
     </div>

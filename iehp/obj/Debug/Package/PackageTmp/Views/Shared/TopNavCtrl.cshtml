@@ -4,7 +4,9 @@
 @using Sitecore.Resources.Media
 @model iehp.TopNav.Models.NavigationViewModel
 
-<div id="subNavMenuWrapper" class="col-24 text-right">
+
+<!--Desktop Menu-->
+<div id="subNavMenuWrapper" class="text-right">
     <ul class="navMenu small">
         @foreach (var child in Model.Guid1List)
         {
@@ -16,22 +18,22 @@
 </div>
 
 <div class="row">
-    <div class="col-3 text-left menuTopPadding">
+    <div class="col-8 col-sm-3 logoAlign">
         <a href="/" alt="IEHP Logo" class="logo"><img class="smallLogo" src="https://ww3.iehp.org/Images/IEHP_LOGO_w194xh106.png" /></a>
     </div>
 
-    <div class="col-21 row justify-content-end menuTopPadding">
-        <div id="megaNavToggle" class="col-16 row justify-content-end">
+    <div class="col-15 col-md-20 col-xl-21 row menuTopPadding justify-content-end">
+        <div id="megaNavToggle" class="col-xl-19 d-none d-xl-block text-right">
             <ul class="navMenu">
                 @foreach (var child in Model.Guid2List)
-                {
-                    <li>
-                        @Html.Sitecore().Field("Link Url", child)
-                    </li>
-                }
+            {
+                <li>
+                    @Html.Sitecore().Field("Link Url", child)
+                </li>
+        }
             </ul>
         </div>
-        <div class="col-1">
+        <div class="col-4 col-sm-1 col-xl-1">
             <div id="searchLinkWrapper" class="searchlink">
                 <i class="fa fa-search fa-custom"></i>
                 <div id="searchBox" class="searchform">
@@ -43,14 +45,22 @@
             </div>
         </div>
 
-        <div class="col-3">
+        <!-- Mobile Menu-->
+        <a href="#" id="drawerOpen" class="col-3 offset-2 d-xl-none hamMargin">
+            <span class="hamLine"></span>
+            <span class="hamLine"></span>
+            <span class="hamLine"></span>
+        </a>
+
+
+        <div class="col-xl-4 d-none d-xl-block">
             <div class="mainNavDropList navMenu float-right">
                 <a href="#" id="mainNavDropLink" class="dropbtn">Portal Login &or;</a>
                 <div id="mainNavDropDown" class="dropdown-content text-left">
                     @foreach (var child in Model.Guid3List)
-                    {
-                        @Html.Sitecore().Field("Link Url", child)
-                    }
+                {
+                    @Html.Sitecore().Field("Link Url", child)
+            }
                 </div>
             </div>
         </div>

@@ -148,6 +148,7 @@
     <Content Include="Views\Shared\_StickySocial.cshtml" />
     <Content Include="Views\Components\BlankPage.cshtml" />
     <Content Include="Views\Shared\ContactPageLayout.cshtml" />
+    <Content Include="Views\Shared\_Drawer.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@
         //starting point for search query & pagination
         startFrom = 0;
 
-        if (window.location == "http://iehp/") {
+        if (window.location.href.indexOf("iehp") > -1) {
             $(".eventBlock2").hide();
             $.when(
                 //Home Page doctor Tab
@@ -34,6 +34,35 @@
         if (window.location.href.indexOf("search%20results") > -1) {
             performSearch();
         }
+
+
+        //Mobile Menu
+        $("#drawerOpen").on("click", function () {
+            var $window = $(window);
+            var windowSize = $window.width();
+            var docHeight = $(document).height();
+
+            if (windowSize < 501) {
+                var distance = "0";
+            } else if (windowSize >599 && windowSize < 990) {
+                var distance = "50%";
+            } else if (windowSize > 990 && windowSize < 1200) {
+                var distance = "60%";
+            }
+
+            $("#drawer").css('height', docHeight);
+            $("#drawer").css('display','block').animate({ left: distance }, 500);
+        });
+
+        $("#drawerClose").on("click", function () {
+            $('#drawer').animate({ left: '150%' },
+                {
+                duration: 500,
+                complete: function () {
+                    $('#drawer').css('display','none');
+                }
+            });
+        });
         
         //Home Page Tabs Section
         $("#doctorTab").on("click", function () {

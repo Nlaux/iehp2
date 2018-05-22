@@ -10,10 +10,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/iehp.dll">
-      <publishTime>05/10/2018 13:26:05</publishTime>
+      <publishTime>05/22/2018 10:19:30</publishTime>
     </File>
     <File Include="bin/iehp.pdb">
-      <publishTime>05/10/2018 13:26:05</publishTime>
+      <publishTime>05/22/2018 10:19:30</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>08/15/2017 14:12:32</publishTime>
@@ -232,7 +232,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/18/2018 10:29:48</publishTime>
     </File>
     <File Include="Scripts/iehp.js">
-      <publishTime>05/16/2018 15:47:14</publishTime>
+      <publishTime>05/22/2018 10:55:23</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>04/02/2018 09:42:20</publishTime>
@@ -245,6 +245,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/modernizr-2.6.2.js">
       <publishTime>04/02/2018 09:42:21</publishTime>
+    </File>
+    <File Include="Scripts/sc-search.js">
+      <publishTime>05/15/2018 15:19:55</publishTime>
     </File>
     <File Include="search.html">
       <publishTime>04/11/2018 11:19:21</publishTime>
@@ -348,6 +351,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Components/pharmForm.cshtml">
       <publishTime>04/12/2018 14:53:14</publishTime>
     </File>
+    <File Include="Views/Components/SCSearchPage.cshtml">
+      <publishTime>04/11/2018 12:35:59</publishTime>
+    </File>
     <File Include="Views/Components/Slider.cshtml">
       <publishTime>04/02/2018 11:23:25</publishTime>
     </File>
@@ -418,16 +424,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/27/2018 14:43:29</publishTime>
     </File>
     <File Include="Views/Components/_TabWrapperCtrl.cshtml">
-      <publishTime>05/18/2018 09:51:26</publishTime>
+      <publishTime>05/22/2018 12:59:38</publishTime>
     </File>
     <File Include="Views/Components/_UCEventCalendarCtrl.cshtml">
       <publishTime>04/17/2018 10:10:52</publishTime>
     </File>
     <File Include="Views/Shared/BlankPageLayout.cshtml">
-      <publishTime>05/15/2018 15:19:13</publishTime>
+      <publishTime>05/15/2018 15:32:04</publishTime>
     </File>
     <File Include="Views/Shared/ContactPageLayout.cshtml">
-      <publishTime>05/16/2018 13:13:13</publishTime>
+      <publishTime>05/22/2018 10:16:00</publishTime>
     </File>
     <File Include="Views/Shared/extraFooter.cshtml">
       <publishTime>04/02/2018 14:45:05</publishTime>
@@ -448,31 +454,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/06/2018 11:27:23</publishTime>
     </File>
     <File Include="Views/Shared/HomePageLayout.cshtml">
-      <publishTime>05/18/2018 13:47:42</publishTime>
+      <publishTime>05/22/2018 10:26:19</publishTime>
     </File>
     <File Include="Views/Shared/MainNavCtrl.cshtml">
       <publishTime>04/23/2018 14:29:19</publishTime>
     </File>
     <File Include="Views/Shared/MemberPageLayout.cshtml">
-      <publishTime>05/15/2018 08:34:52</publishTime>
+      <publishTime>05/22/2018 10:16:41</publishTime>
     </File>
     <File Include="Views/Shared/SearchPageLayout.cshtml">
       <publishTime>05/07/2018 13:20:48</publishTime>
     </File>
     <File Include="Views/Shared/SearchResultsLayout.cshtml">
-      <publishTime>05/15/2018 09:03:40</publishTime>
+      <publishTime>05/22/2018 10:16:56</publishTime>
     </File>
     <File Include="Views/Shared/SubNavCtrl.cshtml">
       <publishTime>04/19/2018 15:36:38</publishTime>
     </File>
     <File Include="Views/Shared/TopNavCtrl.cshtml">
-      <publishTime>05/18/2018 08:46:13</publishTime>
+      <publishTime>05/22/2018 10:40:55</publishTime>
+    </File>
+    <File Include="Views/Shared/_Drawer.cshtml">
+      <publishTime>05/22/2018 10:25:39</publishTime>
     </File>
     <File Include="Views/Shared/_ExtraFooterNavCtrl.cshtml">
       <publishTime>05/18/2018 12:34:23</publishTime>
     </File>
     <File Include="Views/Shared/_FooterNavCtrl.cshtml">
-      <publishTime>05/18/2018 15:44:37</publishTime>
+      <publishTime>05/22/2018 12:57:20</publishTime>
     </File>
     <File Include="Views/Shared/_StickySocial.cshtml">
       <publishTime>05/17/2018 15:51:38</publishTime>

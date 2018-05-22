@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/styles.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet">
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/iehp.js"></script>
@@ -21,15 +21,15 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="col-14 mx-auto">
+        <div class="col-24 col-md-24 col-lg-20 col-xxl-14 mx-auto">
             @Html.Sitecore().Placeholder("navCtrl")
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="col-14 mx-auto row itemSep justify-content-between">
-            <div class="col-24 allPadding row">
-                <div id="searchHeaderWrapper" class="col-24 row">
+            <div class="col-24 row">
+                <div id="searchHeader" class="col-24 row">
                     <div class="col-12 allPadding">
                         <h3 class="resultsHeader">Search Results:</h3>
                         <div id="paginationHelper"></div>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
 
-                <div id="resultsWrapper" class="col-24 topPadding">
+                <div id="resultsWrapper" class="col-24 subNavBackground">
                     <div id="results"></div>
                     <div id="loading"></div>
                 </div>
@@ -48,15 +48,17 @@
         </div>
     </div>
 
+    @RenderPage("~/Views/Shared/_StickySocial.cshtml")
+
 
     <div id="footer" class="container-fluid">
-        <div id="footerLinks" class="col-14 mx-auto row">
+        <div id="footerLinks" class="col-md-24 col-lg-20 col-xxl-14 mx-auto row">
             @Html.Sitecore().Placeholder("footerLinks")
         </div>
     </div>
 
     <div id="extraFooter" class="container-fluid">
-        <div class="col-14 mx-auto row topPadding text-center">
+        <div class="col-md-24 col-lg-20 col-xxl-14 mx-auto row topPadding text-center">
             @Html.Sitecore().Placeholder("extraFooterLinks")
         </div>
     </div>
