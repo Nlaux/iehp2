@@ -4,8 +4,8 @@
     $(document).ready(function () {
         //starting point for search query & pagination
         startFrom = 0;
-
-        if (window.location.href.indexOf("iehp") > -1) {
+       
+        if (top.location.pathname === '/') {
             $(".eventBlock2").hide();
             $.when(
                 //Home Page doctor Tab

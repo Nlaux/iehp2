@@ -1,8 +1,8 @@
 ﻿@using Sitecore.Mvc
 @model iehp.FooterNav.Models.NavigationViewModel
 
-<div id="priFooterLinks" class="col-19 row footerGrey">
-    <div class="col-4 topPadding">
+<div id="priFooterLinks" class="col-19 row iehpGrey">
+    <div class="col-sm-4 col-md-4 topPadding">
         <ul class="footerNavMenu">
             @foreach (var child in Model.Guid1List)
             {
@@ -11,7 +11,7 @@
         </ul>
     </div>
 
-    <div class="col-9 topPadding">
+    <div class="col-sm-7 col-md-9 col-lg-8 topPadding">
         <ul class="footerNavMenu">
             @foreach (var child in Model.Guid2List)
             {
@@ -20,7 +20,7 @@
         </ul>
     </div>
 
-    <div class="col-5 topPadding">
+    <div class="col-sm-6 col-md-5 col-lg-6 topPadding">
        <ul class="footerNavMenu">
             @foreach (var child in Model.Guid3List)
             {
@@ -29,7 +29,7 @@
         </ul>
     </div>
 
-    <div class="col-md-5 col-lg-6 topPadding">
+    <div class="col-sm-7 col-md-5 col-lg-6 topPadding">
        <ul class="footerNavMenu">
             @foreach (var child in Model.Guid4List)
             {
@@ -123,7 +123,7 @@
 
 
 
-<div class="col-sm-5 row footerBlue">
+<div class="col-sm-5 row iehpBlue">
     <div class="col-3 offset-1 col-sm-3 topPadding">
         <i class="fa fa-phone grey" aria-hidden="true"></i>
     </div>

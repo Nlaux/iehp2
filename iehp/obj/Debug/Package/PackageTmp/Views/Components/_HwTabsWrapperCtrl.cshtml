@@ -20,11 +20,11 @@
     @foreach (var child in Model.Guid1)
     {
         <div class="col-24">
-            <h4>@Html.Sitecore().Field("Tab Text Title", child)</h4>
+            <h4 class="iehpMagenta">@Html.Sitecore().Field("Tab Text Title", child)</h4>
             <p>@Html.Sitecore().Field("Tab Text Block 1", child)</p>
         </div>
 
-        <div class="col-24 row">
+        <div class="col-24 row iehpMagenta">
             @Html.Sitecore().Field("Tab Text Block 2", child)
         </div>
 

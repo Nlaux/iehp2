@@ -5,7 +5,7 @@
 @model iehp.HwTabsWrapper.Models.EventViewModel
 
 
-<div class="col-6 row hwTabsImg">
+<div class="col-24 col-md-6 row hwTabsImg">
     @foreach (var child in Model.Guid1)
     {
         Item item = Sitecore.Context.Item;
@@ -16,15 +16,15 @@
 
     </div>
 
-<div class="col-18 allPadding">
+<div class="col-24 col-md-18 allPadding">
     @foreach (var child in Model.Guid1)
     {
         <div class="col-24">
-            <h4>@Html.Sitecore().Field("Tab Text Title", child)</h4>
+            <h4 class="iehpMagenta">@Html.Sitecore().Field("Tab Text Title", child)</h4>
             <p>@Html.Sitecore().Field("Tab Text Block 1", child)</p>
         </div>
 
-        <div class="col-24 row">
+        <div class="col-24 row iehpMagenta">
             @Html.Sitecore().Field("Tab Text Block 2", child)
         </div>
 

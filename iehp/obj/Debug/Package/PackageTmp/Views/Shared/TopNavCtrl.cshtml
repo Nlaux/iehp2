@@ -22,7 +22,7 @@
         <a href="/" alt="IEHP Logo" class="logo"><img class="smallLogo" src="https://ww3.iehp.org/Images/IEHP_LOGO_w194xh106.png" /></a>
     </div>
 
-    <div class="col-15 col-md-20 col-xl-21 row menuTopPadding justify-content-end">
+    <div class="col-15 col-sm-21 row menuTopPadding justify-content-end">
         <div id="megaNavToggle" class="col-xl-19 d-none d-xl-block text-right">
             <ul class="navMenu">
                 @foreach (var child in Model.Guid2List)
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Mobile Menu-->
-        <a href="#" id="drawerOpen" class="col-3 offset-2 d-xl-none hamMargin">
+        <a href="#" id="drawerOpen" class="col-3 col-md-2 d-xl-none hamMargin">
             <span class="hamLine"></span>
             <span class="hamLine"></span>
             <span class="hamLine"></span>
@@ -254,6 +254,89 @@
                 {
                     @Html.Sitecore().Field("Description", child)
                 }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="drawer">
+    <div class="row">
+        <div class="col-21"></div>
+        <a href="#" id="drawerClose" class="col-2 hamMargin">
+            <i class="fas fa-times-circle fa-2x"></i>
+        </a>
+    </div>
+
+    <div class="col-24">
+        <div class="panel-group" id="hamAccordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#hamAccordion" href="#collapseHamOne">About IEHP <i class="fas fa-plus-circle"></i></a></h4>
+                </div>
+                <div id="collapseHamOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <ul class="mobileHamMenu">
+                            @foreach (var child in Model.Guid1List)
+                            {
+                                <li>@Html.Sitecore().Field("Link Url", child)</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group" id="hamAccordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#hamAccordion" href="#collapseHamTwo">For Members <i class="fas fa-plus-circle"></i></a></h4>
+                </div>
+                <div id="collapseHamTwo" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <ul class="mobileHamMenu">
+                            @foreach (var child in Model.Guid2List)
+                            {
+                                <li>@Html.Sitecore().Field("Link Url", child)</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group" id="hamAccordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#hamAccordion" href="#collapseHamThree">For Providers <i class="fas fa-plus-circle"></i></a></h4>
+                </div>
+                <div id="collapseHamThree" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <ul class="mobileHamMenu">
+                            @foreach (var child in Model.Guid3List)
+                            {
+                                <li>@Html.Sitecore().Field("Link Url", child)</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group" id="hamAccordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#hamAccordion" href="#collapseHamFour">Stay Connected <i class="fas fa-plus-circle"></i></a></h4>
+                </div>
+                <div id="collapseHamFour" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <ul class="mobileHamMenu">
+                            @foreach (var child in Model.Guid4List)
+                            {
+                                <li>@Html.Sitecore().Field("Link Url", child)</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

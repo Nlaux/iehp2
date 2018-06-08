@@ -1,8 +1,8 @@
 ﻿@using Sitecore.Mvc
 @model iehp.MrLinks.Models.NavigationViewModel
 
-<div class="col-8 allPadding vertSep fixMargin2">
-    <strong>Forms</strong>
+<div class="col-24 col-sm-8 allPadding vertDivider">
+    <span class="black"><strong>Forms</strong></span>
     <ul class="mrLinks">
         @foreach (var child in Model.Guid1List)
         {
@@ -11,24 +11,26 @@
     </ul>
 </div>
 
-<div class="col-15 allPadding row justify-content-between fixMargin2">
-    <div class="col-24"><strong>Helpful Services</strong></div>
+<div class="col-24 col-sm-16 allPadding justify-content-between">
+    <div class="row black"><strong>Helpful Services</strong></div>
 
-    <div class="col-11 row fixMargin">
-        <ul class="mrLinks">
-            @foreach (var child in Model.Guid2List)
-            {
-                <li>@Html.Sitecore().Field("Link Url", child)</li>
-            }
-        </ul>
-    </div>
+    <div class="row">
+        <div class="col-24 col-sm-11">
+            <ul class="mrLinks">
+                @foreach (var child in Model.Guid2List)
+                {
+                    <li>@Html.Sitecore().Field("Link Url", child)</li>
+                }
+            </ul>
+        </div>
 
-    <div class="col-11 fixMargin">
-        <ul class="mrLinks">
-            @foreach (var child in Model.Guid3List)
-            {
-                <li>@Html.Sitecore().Field("Link Url", child)</li>
-            }
-        </ul>
+        <div class="col-24 col-sm-11">
+            <ul class="mrLinks">
+                @foreach (var child in Model.Guid3List)
+                {
+                    <li>@Html.Sitecore().Field("Link Url", child)</li>
+                }
+            </ul>
+        </div>
     </div>
 </div>

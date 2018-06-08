@@ -29,112 +29,108 @@
     <div id="imageSlider" class="row">
         @RenderPage("~/Views/Shared/_StickySocial.cshtml")
 
-        @Html.Sitecore().Placeholder("memberHero")
+        @Html.Sitecore().Placeholder("providerHero")
     </div>
 
     <div class="container-fluid">
         <div class="col-24 col-xl-20 col-xxl-14 mx-auto row justify-content-between">
-            <div class="col-24 col-md-8">
-                @Html.Sitecore().Placeholder("memberLogin")
+            <div class="col-24 col-md-11">
+                @Html.Sitecore().Placeholder("providerLogin")
             </div>
 
-            <div class="col-24 col-md-7 planPadding magentaBackground white">
-                @Html.Sitecore().Placeholder("planOne")
-            </div>
-
-            <div class="col-24 col-md-8 planPadding magentaBackground white planTopSep">
-                @Html.Sitecore().Placeholder("planTwo")
+            <div class="col-24 col-md-12 planPadding magentaBackground white">
+                @Html.Sitecore().Placeholder("planUpdates")
             </div>
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="col-24 col-xl-20 col-xxl-14 mx-auto row itemSep justify-content-between">
-            <div class="col-24 col-sm-12 plansWidget vertDivider">
-                @Html.Sitecore().Placeholder("plansWidget")
-            </div>
-
-            <div class="col-24 col-sm-12 ctaWidgets iehpGreen planTopSep">
-                @Html.Sitecore().Placeholder("cahCTA")
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="col-24 col-xl-20 col-xxl-14 mx-auto row itemSep justify-content-between">
-            <div class="col-24 col-lg-6 magentaBackground">
-                <div class="col-24">
-                    @Html.Sitecore().Placeholder("hwVideo")
-                </div>
-                <div class="col-24">
-                    @Html.Sitecore().Placeholder("hwWidget")
-                </div>
-            </div>
-
-            <div class="col-24 col-lg-18 itemSep2">
-                <div id="membersTabsNav" class="col-24 col-lg-23 mx-auto">
-                    <div class="hwTabsHeader">
-                        <h3>Health & Wellness</h3>
+            <div class="col-24 itemSep2">
+                <div id="providerTabsNav" class="col-24 mx-auto">
+                    <div class="proTabsHeader">
+                        <h3>Provider Resources</h3>
                     </div>
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a id="hwTab1" class="mainTab nav-link active" href="#" data-toggle="tab">Health Topics</a>
+                            <a id="proTab1" class="mainTab nav-link active" href="#" data-toggle="tab">PCP</a>
                         </li>
                         <li class="nav-item">
-                            <a id="hwTab2" class="mainTab nav-link" href="#" data-toggle="tab">Health Programs</a>
+                            <a id="proTab2" class="mainTab nav-link" href="#" data-toggle="tab">Vision</a>
                         </li>
                         <li class="nav-item">
-                            <a id="hwTab3" class="mainTab nav-link" href="#" data-toggle="tab">Flu Facts</a>
+                            <a id="prTab3" class="mainTab nav-link" href="#" data-toggle="tab">Behavorial Health</a>
                         </li>
                         <li class="nav-item">
-                            <a id="hwTab4" class="mainTab nav-link" href="#" data-toggle="tab">Kids &amp; Safety</a>
+                            <a id="proTab4" class="mainTab nav-link" href="#" data-toggle="tab">Specialists</a>
                         </li>
                         <li class="nav-item">
-                            <a id="hwTab5" class="mainTab nav-link" href="#" data-toggle="tab">Interactive Tools</a>
+                            <a id="proTab5" class="mainTab nav-link" href="#" data-toggle="tab">Ancillary</a>
                         </li>
                         <li class="nav-item">
-                            <a id="hwTab6" class="mainTab nav-link" href="#" data-toggle="tab">Preventive Health</a>
+                            <a id="proTab6" class="mainTab nav-link" href="#" data-toggle="tab">IPA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="proTab7" class="mainTab nav-link" href="#" data-toggle="tab">Facility</a>
                         </li>
                     </ul>
 
                     <div class="tab-content clearfix">
-                        <div class="tab-pane active" id="hwTab1Tab">
-                            <div id="hwTab1Content" class="tabWrapper row">
+                        <div class="tab-pane active" id="proTab1Tab">
+                            <div id="proTab1Content" class="tabWrapper row">
                                 <!--Tab Content Goes Here-->
                             </div>
                         </div>
 
-                        <div class="tab-pane" id="hwTab2Tab">
-                            <div id="hwTab2Content" class="tabWrapper row">
+                        <div class="tab-pane" id="proTab2Tab">
+                            <div id="proTab2Content" class="tabWrapper row">
                                 <!--Tab Content Goes Here-->
                             </div>
                         </div>
 
-                        <div class="tab-pane" id="hwTab3Tab">
-                            <div id="hwTab3Content" class="tabWrapper row">
+                        <div class="tab-pane" id="proTab3Tab">
+                            <div id="proTab3Content" class="tabWrapper row">
                                 <!--Tab Content Goes Here-->
                             </div>
                         </div>
 
-                        <div class="tab-pane" id="hwTab4Tab">
-                            <div id="hwTab4Content" class="tabWrapper row">
+                        <div class="tab-pane" id="proTab4Tab">
+                            <div id="proTab4Content" class="tabWrapper row">
                                 <!--Tab Content Goes Here-->
                             </div>
                         </div>
 
-                        <div class="tab-pane" id="hwTab5Tab">
-                            <div id="hwTab5Content" class="tabWrapper row">
+                        <div class="tab-pane" id="proTab5Tab">
+                            <div id="proTab5Content" class="tabWrapper row">
                                 <!--Tab Content Goes Here-->
                             </div>
                         </div>
 
-                        <div class="tab-pane" id="hwTab6Tab">
-                            <div id="hwTab6Content" class="tabWrapper row">
+                        <div class="tab-pane" id="proTab6Tab">
+                            <div id="proTab6Content" class="tabWrapper row">
+                                <!--Tab Content Goes Here-->
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="proTab7Tab">
+                            <div id="proTab7Content" class="tabWrapper row">
                                 <!--Tab Content Goes Here-->
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-24 col-xl-20 col-xxl-14 mx-auto row itemSep justify-content-between">
+            <div class="col-24 col-sm-12 proWidget vertDivider">
+                @Html.Sitecore().Placeholder("plansWidget")
+            </div>
+
+            <div class="col-24 col-sm-12 proWidget iehpGreen planTopSep">
+                @Html.Sitecore().Placeholder("cahCTA")
             </div>
         </div>
     </div>
@@ -174,6 +170,6 @@
     </div>
 
 
-        <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

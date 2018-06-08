@@ -40,15 +40,17 @@
         $("#drawerOpen").on("click", function () {
             var $window = $(window);
             var windowSize = $window.width();
+            var docHeight = $(document).height();
 
-            if (windowSize < 600) {
+            if (windowSize < 501) {
                 var distance = "0";
-            } else if (windowSize > 767 && windowSize < 992) {
+            } else if (windowSize >599 && windowSize < 990) {
                 var distance = "50%";
-            } else {
-                var distance = "36%";
+            } else if (windowSize > 990 && windowSize < 1200) {
+                var distance = "60%";
             }
 
+            $("#drawer").css('height', docHeight);
             $("#drawer").css('display','block').animate({ left: distance }, 500);
         });
 

@@ -1,16 +1,12 @@
 ﻿@using Sitecore.Mvc
 @model iehp.HwVideoWidget.Models.EventViewModel
 
-<div id="youtubeVideoWrapper" class="col-13 row allPadding greenBackground">
-    <div class="responsiveVideo">
-        <div id="youtube" class="videoSize"></div>
-    </div>
+<div id="youtubeVideoWrapper" class="col-13 row">
+
 </div>
 
-<div id="vimeoVideoWrapper" class="col-13 row allPadding greenBackground">
-    <div class="responsiveVideo">
-        <div id="vimeo" class="videoSize"></div>
-    </div>
+<div id="vimeoVideoWrapper" class="col-13 row">
+
 </div>
 
 @foreach (var child in ViewBag.activeVideoList)
@@ -21,43 +17,32 @@
 
     <script type="text/javascript">
     if ("@vidType" == "Youtube") {
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('youtube', {
-                videoId: '@ytVideoID',
-                autoplay: 'false',
-                rel: 'false',
-                playerVars: {
-                    'showinfo': 0
-                },
-            });
-        }
-
-        function stopVideo() {
-            player.stopVideo();
-        }
-
+        $('#youtubeVideoWrapper').html("<object width='100%' height='100%'><param name='movie' value='http://www.youtube.com/embed/" + '@ytVideoID' + "?html5=1&amp;rel=0&amp;hl=en_US&amp;version=3' /><param name='allowFullScreen' value='true' /><param name='allowscriptaccess' value='always' /><embed width='100%' height='100%' src='http://www.youtube.com/embed/" + '@ytVideoID' + "?html5=1&amp;rel=0&amp;hl=en_US&amp;version=3' class='youtube-player' type='text/html' allowscriptaccess='always' allowfullscreen='true' /></object>");
         $('#youtubeVideoWrapper').css('display', 'block');
 
     } else if ("@vidType" == "Vimeo") {
-        var options = {
-            id: '@vimVideoID',
-            width: 580,
-            height: 270,
-            title: false,
-            byline: false,
-            badge: false,
-            vp_title: false,
-            loop: false
-        };
+        var videoUrl = 'http://www.vimeo.com/' + @vimVideoID;
+        var endpoint = 'http://www.vimeo.com/api/oembed.json';
+        var callback = 'embedVideo';
 
-        var player = new Vimeo.Player('vimeo', options);
+        var url = endpoint + '?url=' + encodeURIComponent(videoUrl) + '&callback=' + callback;
+
+        function embedVideo(video) {
+            document.getElementById('vimeoVideoWrapper').innerHTML = unescape(video.html);
+        }
+
+        function init() {
+            var js = document.createElement('script');
+            js.setAttribute('type', 'text/javascript');
+            js.setAttribute('src', url);
+            document.getElementsByTagName('head').item(0).appendChild(js);
+        }
+
+        window.onload = init;
         $('#vimeoVideoWrapper').css('display', 'block');
     }
     </script>
 }
+
+
+

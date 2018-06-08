@@ -34,52 +34,60 @@
 
     <div class="container-fluid">
         <div class="col-14 mx-auto row justify-content-between">
-            <div class="col-12 lightBlueBackground">
+            <div class="col-24 col-sm-8">
                 @Html.Sitecore().Placeholder("memberLogin")
             </div>
 
-            <div class="col-11 greenBackground">
-                @Html.Sitecore().Placeholder("memberInfo")
+            <div class="col-24 col-sm-7 planPadding magentaBackground white">
+                @Html.Sitecore().Placeholder("planOne")
             </div>
+
+            <div class="col-24 col-sm-8 planPadding magentaBackground white">
+                @Html.Sitecore().Placeholder("planTwo")
+            </div>
+
+            @*<div class="col-11">
+                @Html.Sitecore().Placeholder("memberInfo")
+            </div>*@
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="col-14 mx-auto row itemSep justify-content-between">
-            <div id="plansWrapper" class="col-17 row magentaBackground white">
-                <div class="col-24 fmPlansHeader">
-                    <h4 class="ourPlans">Our Plans</h4>
-                </div>
+            @*<div id="plansWrapper" class="col-17 row magentaBackground white">
+            <div class="col-24 fmPlansHeader">
+                <h4 class="ourPlans">Our Plans</h4>
+            </div>
+        </div>*@
 
-                <div class="col-12 planPadding">
-                    @Html.Sitecore().Placeholder("planOne")
-                </div>
-
-                <div class="col-12 planPadding">
-                    @Html.Sitecore().Placeholder("planTwo")
-                </div>
+            <div class="col-12 ctaWidgets vertDivider">
+                @Html.Sitecore().Placeholder("cahCTA")
             </div>
 
-
-            <div class="col-6 plansWidget">
+            <div class="col-12 plansWidget">
                 @Html.Sitecore().Placeholder("plansWidget")
             </div>
 
-            <div id="plansCTAWrapper" class="col-24 row">
-                @Html.Sitecore().Placeholder("plansCTA")
-            </div>
+            @*<div id="plansCTAWrapper" class="col-24 row">
+            @Html.Sitecore().Placeholder("plansCTA")
+        </div>*@
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="col-14 mx-auto row itemSep justify-content-between">
-            <div class="col-5 greyBackground">
-                @Html.Sitecore().Placeholder("hwWidget")
+            <div class="col-6 magentaBackground">
+                <div class="col-24">
+                    @Html.Sitecore().Placeholder("hwVideo")
+                </div>
+                <div class="col-24">
+                    @Html.Sitecore().Placeholder("hwWidget")
+                </div>
             </div>
 
-            <div class="col-18 greyBackground">
-                <div id="mainTabsNav" class="col-24 mx-auto">
-                    <ul class="nav nav-tabs nav-fill">
+            <div class="col-18">
+                <div id="mainTabsNav" class="col-23 mx-auto">
+                    <ul class="nav nav-tabs">
                         <li class="nav-item">
                             <a id="hwTab1" class="mainTab nav-link active" href="#" data-toggle="tab">Health Topics</a>
                         </li>
@@ -142,8 +150,6 @@
         </div>
 
         <div class="col-14 mx-auto row topPadding justify-content-between white">
-            @Html.Sitecore().Placeholder("hwVideo")
-
             <div class="col-5 allPadding greenBackground">
                 @Html.Sitecore().Placeholder("hwEvent")
             </div>
@@ -156,9 +162,6 @@
 
     <div class="container-fluid">
         <div class="col-14 mx-auto row itemSep justify-content-between white">
-            <div class="col-6 ctaWidgets flexbox magentaBackground">
-                @Html.Sitecore().Placeholder("cahCTA")
-            </div>
 
             <div class="col-17 magentaBackground row">
                 <div class="col-24 mrHeader"><h4>Member Resources</h4></div>

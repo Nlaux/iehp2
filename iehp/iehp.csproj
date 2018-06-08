@@ -137,7 +137,6 @@
     <Content Include="Views\Components\_PlansCTA.cshtml" />
     <Content Include="Views\Components\_hwWidget.cshtml" />
     <Content Include="Views\Components\_HwTabsWrapperCtrl.cshtml" />
-    <Content Include="Views\Components\_HwVideoWidget.cshtml" />
     <Content Include="Views\Components\_HwEventWidgetCtrl.cshtml" />
     <Content Include="Views\Components\_HwCTA.cshtml" />
     <Content Include="Views\Components\_CahCTA.cshtml" />
@@ -148,7 +147,6 @@
     <Content Include="Views\Shared\_StickySocial.cshtml" />
     <Content Include="Views\Components\BlankPage.cshtml" />
     <Content Include="Views\Shared\ContactPageLayout.cshtml" />
-    <Content Include="Views\Shared\_Drawer.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
