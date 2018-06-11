@@ -424,7 +424,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/27/2018 14:43:29</publishTime>
     </File>
     <File Include="Views/Components/_TabWrapperCtrl.cshtml">
-      <publishTime>06/06/2018 09:12:23</publishTime>
+      <publishTime>06/08/2018 15:23:31</publishTime>
     </File>
     <File Include="Views/Components/_UCEventCalendarCtrl.cshtml">
       <publishTime>04/17/2018 10:10:52</publishTime>
@@ -454,13 +454,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/06/2018 11:27:23</publishTime>
     </File>
     <File Include="Views/Shared/HomePageLayout.cshtml">
-      <publishTime>05/22/2018 10:26:19</publishTime>
+      <publishTime>06/08/2018 16:00:55</publishTime>
     </File>
     <File Include="Views/Shared/MainNavCtrl.cshtml">
       <publishTime>04/23/2018 14:29:19</publishTime>
     </File>
     <File Include="Views/Shared/MemberPageLayout.cshtml">
-      <publishTime>06/08/2018 09:07:09</publishTime>
+      <publishTime>06/08/2018 14:23:53</publishTime>
+    </File>
+    <File Include="Views/Shared/ProvidersPageLayout.cshtml">
+      <publishTime>06/08/2018 14:25:24</publishTime>
     </File>
     <File Include="Views/Shared/SearchPageLayout.cshtml">
       <publishTime>05/07/2018 13:20:48</publishTime>
@@ -472,7 +475,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/19/2018 15:36:38</publishTime>
     </File>
     <File Include="Views/Shared/TopNavCtrl.cshtml">
-      <publishTime>05/22/2018 10:40:55</publishTime>
+      <publishTime>06/08/2018 15:46:04</publishTime>
     </File>
     <File Include="Views/Shared/_Drawer.cshtml">
       <publishTime>05/22/2018 10:25:39</publishTime>
@@ -481,7 +484,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/18/2018 12:34:23</publishTime>
     </File>
     <File Include="Views/Shared/_FooterNavCtrl.cshtml">
-      <publishTime>06/07/2018 08:52:39</publishTime>
+      <publishTime>06/08/2018 16:19:59</publishTime>
     </File>
     <File Include="Views/Shared/_StickySocial.cshtml">
       <publishTime>05/17/2018 15:51:38</publishTime>

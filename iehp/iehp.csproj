@@ -127,7 +127,6 @@
     <Content Include="Views\Components\DualChoicePlanCtrl.cshtml" />
     <Content Include="Views\Components\_TabWrapperCtrl.cshtml" />
     <Content Include="Views\Shared\_FooterNavCtrl.cshtml" />
-    <Content Include="Views\Shared\MemberPageLayout.cshtml" />
     <Content Include="Views\Components\MemberHeroCtrl.cshtml" />
     <Content Include="Views\Components\_MemberLogin.cshtml" />
     <Content Include="Views\Components\_MemberInfo.cshtml" />
@@ -147,6 +146,8 @@
     <Content Include="Views\Shared\_StickySocial.cshtml" />
     <Content Include="Views\Components\BlankPage.cshtml" />
     <Content Include="Views\Shared\ContactPageLayout.cshtml" />
+    <Content Include="Views\Shared\ProvidersPageLayout.cshtml" />
+    <Content Include="Views\Shared\MemberPageLayout.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

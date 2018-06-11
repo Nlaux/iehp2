@@ -56,8 +56,8 @@
                     <p class="noMargin">@Html.Sitecore().Field("Description", child)</p>
                 </div>
 
-                <div class="col-md-12 offset-md-12 text-right">
-                    <a class="newsArrow" href="#">View Article &rarr;</a>
+                <div class="col-md-12 offset-md-6">
+                    <a class="newsArrow" href="#"><i class="fa fa-chevron-right"></i> View Article</a>
                 </div>
             </div>
         }
@@ -76,8 +76,8 @@
         <div id="eventCalHeader" class="col-24 col-sm-16 col-md-16">@Html.Raw(@ViewBag.ecTitle)</div>
         <div class="col-6 col-sm-8 text-right">
             <ul class="pager d-none d-sm-block">
-                <li><a href="#">&larr; Prev</a></li>
-                <li><a href="#">Next &rarr;</a></li>
+                <li><a href="#"><i class="fa fa-chevron-left"></i> Prev</a></li>
+                <li><a href="#">Next <i class="fa fa-chevron-right"></i></a></li>
             </ul>
         </div>
 
